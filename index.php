@@ -89,22 +89,22 @@
 	
 	<div class="span3">
 		<h3><span>H</span>abitaciones</h3>
-		<a href="rooms.php"><img src="css/images/suite.jpg" alt="" /></a>
+		<a href="habitaciones.php"><img src="css/images/suite.jpg" alt="" /></a>
 		<p>Ve nuestras habitaciones y reservala al instante</p>
 	</div>		
 	<div class="span3">
 		<h3><span>S</span>ervicios</h3>
-		<a href="facilities.php"><img src="css/images/restaurant.jpg" alt="" /></a>
+		<a href="servicios.php"><img src="css/images/restaurant.jpg" alt="" /></a>
 		<p>Disfrute de los mejores platillos de Jiquilpan en nuestro Restautant</p>
 	</div>		
 	<div class="span3">
 		<h3><span>P</span>romociones</h3>
-		<a href="promotions.php"><img src="css/images/recepcion.jpg" alt="" /></a>
+		<a href="promociones.php"><img src="css/images/recepcion.jpg" alt="" /></a>
 		<p>Hospedate cinco noches y disfrute de una noche más totalmente <b>gratis</b>!</p>
 	</div>		
 	<div class="span3">
 		<h3><span>U</span>bicacion</h3>
-		<iframe width="220" height="135" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com.mx/maps?source=s_q&amp;hl=es-419&amp;geocode=&amp;q=hotel+palmira&amp;aq=&amp;sll=23.554131,-102.6205&amp;sspn=24.13917,43.286133&amp;ie=UTF8&amp;hq=hotel+palmira&amp;hnear=Jiquilpan+de+Ju%C3%A1rez,+Michoac%C3%A1n&amp;split=1&amp;t=m&amp;ll=19.988965,-102.717552&amp;spn=0.006295,0.007524&amp;output=embed"></iframe><br /><small><a href="hubicacion.php">Ver mapa más grande</a></small>
+		<iframe width="220" height="135" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com.mx/maps?source=s_q&amp;hl=es-419&amp;geocode=&amp;q=hotel+palmira&amp;aq=&amp;sll=23.554131,-102.6205&amp;sspn=24.13917,43.286133&amp;ie=UTF8&amp;hq=hotel+palmira&amp;hnear=Jiquilpan+de+Ju%C3%A1rez,+Michoac%C3%A1n&amp;split=1&amp;t=m&amp;ll=19.988965,-102.717552&amp;spn=0.006295,0.007524&amp;output=embed"></iframe><br /><small><a href="ubicacion.php">Ver mapa más grande</a></small>
 	</div>		
 </div>		
 

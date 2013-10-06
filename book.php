@@ -174,7 +174,7 @@
 						<div class="row">
 							<div class="span9">
 								<br />
-								<a href="book-pay.html" class="btn btn-primary btn-large book-now pull-right">Continue</a>
+								<a href="book-pay.php" class="btn btn-primary btn-large book-now pull-right">Continue</a>
 								<br />
 								<br />
 							</div>
@@ -221,57 +221,39 @@
 	<div class="row footer_section_pre">
 
 	<div class="span4">
-		<h4>Bootstrap Hotel<span class="line"></span></h4>
+		<h4>Hotel Palmira<span class="line"></span></h4>
 
-		<p>2247 Copperhead Road, Hartford, CT 06103</p>
-		<p>Tel: +860-631-7795<br />Fax: +860-631-7796  <br />Email: admin@appsarea.com  </p>
+		<p>Lázaro Cárdenas Sur # 200</p>
+		<p>Jiquilpan, Michoacan De Ocampo, Mexico<br />Tel: 01 353 533 0091  <br />Email: hotelpalmiramich@prodigy.net.mx</p>
 
 		<ul data-facebook-action="recommend" data-url="#" class="socialcount socialcount-small recommend grade-a">
-			<li class="facebook"><a title="Share on Facebook" href="https://www.facebook.com/sharer/sharer.php?u=#"><span class="social-icon icon-facebook"></span><span class="count"></span></a></li>
-			<li class="twitter"><a title="Share on Twitter" href="https://twitter.com/intent/tweet?text=#"><span class="social-icon icon-twitter"></span><span class="count"></span></a></li>
-			<li class="googleplus"><a title="Share on Google Plus" href="https://plus.appsarea.com/share?url=#"><span class="social-icon icon-googleplus"></span><span class="count"></span></a></li>
+			<li class="facebook"><a title="Comparte en Facebook" href="https://www.facebook.com/HotelPalmira"><span class="social-icon icon-facebook"></span><span class="count"></span></a></li>
 		</ul>
 		<br />
-		<p class="copy">All content &copy; 2013 <a href="http://appsarea.com/">AppsArea</a></p>
+		<p class="copy">&copy; 2013 <a href="http://appsarea.com/">DJLabs</a></p>
 
 	</div>
 	<div class="span4">
-		<h4>Special offers<span class="line"></span></h4>
-		<p><b>FREE</b> Breakfast, <b>FREE</b> Internet, <b>FREE</b> Tour = Savings!</p>
-		<p>Stay five nights and get one night totally <b>FREE</b>!</p>
-		<p>Save up to <b>20% OFF</b> our Best Available Rate by booking with us in advance.</p>
+		<h4>Ofertas Especiales<span class="line"></span></h4>
+		<p>Hospedate cinco noches y disfrute de una noche más totalmente <b>gratis</b>!</p>
 	</div>
 	<div class="span4">
-		<h4>Sponsors<span class="line"></span></h4>
+		<h4>Patrocinadores<span class="line"></span></h4>
 		    <ul class="thumbnails">
 				<li class="span2">
 					<div class="thumbnail">
-						<img src="css/images/airlines/virgin4.gif" alt="" />
+						<img src="css/images/airlines/Pueblo-Mágico.jpg" alt="" />
 					</div>
 				</li>				
 				<li class="span2">
 					<div class="thumbnail">
-						<img src="css/images/airlines/ba2.gif" alt="" />
+						<img src="css/images/airlines/viajesnavacastro.jpg" alt="" />
 					</div>
-				</li>				
-				<li class="span2">
-					<div class="thumbnail">
-						<img src="css/images/airlines/delta3.gif" alt="" />
-					</div>
-				</li>										
-				<li class="span2">
-					<div class="thumbnail">
-						<img src="css/images/airlines/ac_white.jpg" alt="" />
-					</div>
-				</li>
-				
-
+				</li>								
 			</ul>
 	</div>
 	</div>
-	
 	</div>
-	
 	
 </footer>
 

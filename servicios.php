@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es"><head>
+<html lang="en"><head>
 	
     <meta charset="utf-8" />
     <title>Hotel Palmira</title>
@@ -56,7 +56,7 @@
 							<div class="nav-collapse">
 								<ul class="nav nav-pills">
 									<li class=""><a href="index.php">Inicio</a></li>
-									<li class="active"><a href="habitaciones.php">Habitaciones</a></li>
+									<li class=""><a href="habitaciones.php">Habitaciones</a></li>
 									<li class=""><a href="ubicacion.php">Ubicación</a></li>
 									<li class=""><a href="login.php">Inicia Sesión</a></li>
 								</ul>
@@ -64,103 +64,63 @@
 						</div>
 					</div><!-- /navbar -->
 				</div>
-			</div><!-- end header --><div class="row-fluid">
+			</div><!-- end header --><div class="row">
 	
 	<div class="span12">	
 		<br /><br />
-		<h1>Habitaciones y Suites</h1>
-		
-		<div class="row-fluid">
+		<h1>facilities and services</h1>
+
+		<div class="row">
 			
-			<div class="span4">
-				<h3><span>SINGLE</span> ROOM</h3>
-				<a href="reservacion.php"><img src="css/images/rooms/prieview.jpg" alt="" /></a>
-				<br/>
-				<br/>
-				<p> Wake up to this traditional room with 25-inch TV and on-demand movies. The comfortable room, with opening windows, has 1 single bed. Sleeps 1 adult. </p>
-				
-				<div class="row center">
-					<a class="btn btn-primary btn-large check-availability" href="reservacion.php">Reserva ahora</a>
-				</div>
-				
+			<div class="span6">
+				<h3><span>Fitness</span> Center</h3>
+				<a href="general.html"><img src="css/images/facilities/gym.jpg" alt="" /></a>
+				<p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui. </p>
 			</div>		
 			
-			<div class="span4">
-				<h3><span>Double</span> ROOM</h3>
-				<a href="reservacion.php"><img src="css/images/rooms/prieview.jpg" alt="" /></a>
-				<br/>
-				<br/>
-				<p> Feel at home in this spacious room with sea views, a desk and a 21-inch TV. The bright and airy room, in calm tones, has 1 double bed. Maximum occupancy 2 adults. </p>
-				<div class="row center">
-					<a class="btn btn-primary btn-large check-availability" href="reservacion.php">Reserva ahora</a>
-				</div>
-			</div>	
-			
-			<div class="span4">
-				<h3><span>Triple</span> ROOM</h3>
-				<a href="reservacion.php"><img src="css/images/rooms/prieview.jpg" alt="" /></a>
-				<br/>
-				<br/>
-				<p>A spacious room with a sea view and a 32-inch TV. The bright and airy room, in cool, calm tones, has 1 double bed and a single bed. Maximum occupancy 3 adults. </p>
-				<div class="row center">
-					<a class="btn btn-primary btn-large check-availability" href="reservacion.php">Reserva ahora</a>
-				</div>
+			<div class="span6">
+				<h3><span>Spa </span> &amp; Massage</h3>
+				<a href="general.html"><img src="css/images/facilities/massage.jpg" alt="" /></a>
+				<p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui. </p>
 			</div>				
-		
-		</div>				
-		
-		<div class="row-fluid">
-			<div class="span4">
-				<h3><span>Luxury</span> ROOM</h3>
-				<a href="reservacion.php"><img src="css/images/rooms/prieview.jpg" alt="" /></a>
-				<br/>
-				<br/>
-				<p>  Wrap up in a fluffy bathrobe in this spacious room with views of the sea all around. The room has 2 double beds and a balcony. Maximum occupancy 4 adults. </p>
-				
-				<div class="row center">
-					<a class="btn btn-primary btn-large check-availability" href="reservacion.php">Reserva ahora</a>
-				</div>
-				
+			
+			<div class="span6">
+				<h3><span>fun</span> &amp; sports</h3>
+				<a href="general.html"><img src="css/images/facilities/golf.jpg" alt="" /></a>
+				<p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui. </p>
 			</div>		
 			
-			<div class="span4">
-				<h3><span>Private</span> pool ROOM</h3>
-				<a href="reservacion.php"><img src="css/images/rooms/prieview.jpg" alt="" /></a>
-				<br/>
-				<br/>
-				<p>A private pool, 2 double beds, sea view and a 32-inch TV. Unwind on the terrace in the oversized day bed and watch the sun set.  Maximum occupancy 4 adults.</p>
-
-				<div class="row center">
-					<a class="btn btn-primary btn-large check-availability" href="reservacion.php">Reserva ahora</a>
-				</div>
-				
-			</div>	
+			<div class="span6">
+				<h3><span>Swimming </span> pool</h3>
+				<a href="general.html"><img src="css/images/facilities/swimming_pool.jpg" alt="" /></a>
+				<p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui. </p>
+			</div>				
 			
-			<div class="span4">
-				<h3><span>Private </span> villa</h3>
-				<a href="reservacion.php"><img src="css/images/rooms/prieview.jpg" alt="" /></a>
-				<br/>
-				<br/>
-				<p>Choose a Water Villa and enjoy sublime views of the sea. Enjoy the en-suite bathroom with its own sundeck, gazebo and rain showers. Maximum occupancy 5 adults.</p>
-
-				<div class="row center">
-					<a class="btn btn-primary btn-large check-availability" href="reservacion.php">Reserva ahora</a>
-				</div>
-				
-			</div>	
+			<div class="span6">
+				<h3><span>Water</span> sports</h3>
+				<a href="general.html"><img src="css/images/facilities/scuba.jpg" alt="" /></a>
+				<p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui. </p>
+			</div>		
+			
+			<div class="span6">
+				<h3><span>Food </span> &amp; drink</h3>
+				<a href="general.html"><img src="css/images/facilities/restaurant.jpg" alt="" /></a>
+				<p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui. </p>
+			</div>			
 			
 		</div>
 		
-		
-		
+
+
 		
 	</div>
 	
 </div>
+
 </div> <!-- /container -->
 
 <footer>
-|	<div class="container">
+<div class="container">
 	<div class="row footer_section_pre">
 
 	<div class="span4">
@@ -197,6 +157,7 @@
 	</div>
 	</div>
 	</div>
+
 </footer>
 
 	<script src="http://maps.google.com/maps/api/js?sensor=false"></script>

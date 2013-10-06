@@ -35,11 +35,11 @@
 		<div class="container-fluid">
 			<div class="row"><!-- start header -->
 				<div class="span5 logo">
-					<a href="index.html">
+					<a href="index.php">
 					<div class="row">
 						<div class="span3 logo">
-							<h1>Bootstrap<span>Hotel</span></h1>
-							<p>&#9733;&#9733;&#9733;&#9733;&#9734;</p>
+							<h1>Hotel<span>Palmira</span></h1>
+							<p>&#9733;&#9733;&#9733;&#9734;&#9734;</p>
 						</div>
 					</div>
 					</a>
@@ -55,12 +55,10 @@
 
 							<div class="nav-collapse">
 								<ul class="nav nav-pills">
-									<li class=""><a href="index.html">Home</a></li>
-									<li class=""><a href="rooms.html">Rooms</a></li>
-									<li class=""><a href="facilities.html">Facilities</a></li>
-									<li class=""><a href="gallery.html">Gallery</a></li>
-									<li class=""><a href="map.html">Map</a></li>
-									<li class=""><a href="book-start.html">Book</a></li>
+									<li class=""><a href="index.php">Inicio</a></li>
+									<li class=""><a href="habitaciones.php">Habitaciones</a></li>
+									<li class=""><a href="ubicacion.php">Ubicación</a></li>
+									<li class=""><a href="login.php">Inicia Sesión</a></li>
 								</ul>
 							</div><!-- /.nav-collapse -->
 						</div>
@@ -69,46 +67,8 @@
 			</div><!-- end header --><div class="row">
 	<div class="span12">	
 		<br /><br />
-		<h1>Special offers</h1><br />
+		<h1>Ofertas Especiales</h1><br />
 	</div>
-	<div class="span3">
-		
-		<form class="form-inline mini" />
-			<div class="row">
-				<div class="span3">
-					<h4>When would you like to stay with us?</h4>
-
-					<div class="row">
-						<div class="span3">							  
-							<div class="control-group">
-								<label for="focusedInput" class="control-label">Arrive</label>
-								<div class="controls">
-									<input type="text" class="span2 global-datepicker-from check-in-date" value="" />	
-									<a href="#" id="global-datepicker-from"><i class="icon-calendar"></i></a>
-								</div>
-							</div>
-						</div>
-
-						<div class="span3 ">	
-							<div class="control-group">
-								<label for="focusedInput" class="control-label">Depart</label>
-								<div class="controls">
-									<input type="text" class="span2 global-datepicker-to check-out-date" value="" />
-									<a href="#" id="global-datepicker-to"><i class="icon-calendar"></i></a>
-								</div>
-							</div>		
-						</div>		
-					</div>	
-
-					<a class="btn btn-primary btn-large book-now" href="book-start.html">Check availability</a>
-
-					
-				</div>
-			</div>
-
-		</form>
-	</div>
-	
 	<div class="span9 promotions">	
 		
 		<div class="row">
@@ -163,57 +123,39 @@
 	<div class="row footer_section_pre">
 
 	<div class="span4">
-		<h4>Bootstrap Hotel<span class="line"></span></h4>
+		<h4>Hotel Palmira<span class="line"></span></h4>
 
-		<p>2247 Copperhead Road, Hartford, CT 06103</p>
-		<p>Tel: +860-631-7795<br />Fax: +860-631-7796  <br />Email: admin@appsarea.com  </p>
+		<p>Lázaro Cárdenas Sur # 200</p>
+		<p>Jiquilpan, Michoacan De Ocampo, Mexico<br />Tel: 01 353 533 0091  <br />Email: hotelpalmiramich@prodigy.net.mx</p>
 
 		<ul data-facebook-action="recommend" data-url="#" class="socialcount socialcount-small recommend grade-a">
-			<li class="facebook"><a title="Share on Facebook" href="https://www.facebook.com/sharer/sharer.php?u=#"><span class="social-icon icon-facebook"></span><span class="count"></span></a></li>
-			<li class="twitter"><a title="Share on Twitter" href="https://twitter.com/intent/tweet?text=#"><span class="social-icon icon-twitter"></span><span class="count"></span></a></li>
-			<li class="googleplus"><a title="Share on Google Plus" href="https://plus.appsarea.com/share?url=#"><span class="social-icon icon-googleplus"></span><span class="count"></span></a></li>
+			<li class="facebook"><a title="Comparte en Facebook" href="https://www.facebook.com/HotelPalmira"><span class="social-icon icon-facebook"></span><span class="count"></span></a></li>
 		</ul>
 		<br />
-		<p class="copy">All content &copy; 2013 <a href="http://appsarea.com/">AppsArea</a></p>
+		<p class="copy">&copy; 2013 <a href="http://appsarea.com/">DJLabs</a></p>
 
 	</div>
 	<div class="span4">
-		<h4>Special offers<span class="line"></span></h4>
-		<p><b>FREE</b> Breakfast, <b>FREE</b> Internet, <b>FREE</b> Tour = Savings!</p>
-		<p>Stay five nights and get one night totally <b>FREE</b>!</p>
-		<p>Save up to <b>20% OFF</b> our Best Available Rate by booking with us in advance.</p>
+		<h4>Ofertas Especiales<span class="line"></span></h4>
+		<p>Hospedate cinco noches y disfrute de una noche más totalmente <b>gratis</b>!</p>
 	</div>
 	<div class="span4">
-		<h4>Sponsors<span class="line"></span></h4>
+		<h4>Patrocinadores<span class="line"></span></h4>
 		    <ul class="thumbnails">
 				<li class="span2">
 					<div class="thumbnail">
-						<img src="css/images/airlines/virgin4.gif" alt="" />
+						<img src="css/images/airlines/Pueblo-Mágico.jpg" alt="" />
 					</div>
 				</li>				
 				<li class="span2">
 					<div class="thumbnail">
-						<img src="css/images/airlines/ba2.gif" alt="" />
+						<img src="css/images/airlines/viajesnavacastro.jpg" alt="" />
 					</div>
-				</li>				
-				<li class="span2">
-					<div class="thumbnail">
-						<img src="css/images/airlines/delta3.gif" alt="" />
-					</div>
-				</li>										
-				<li class="span2">
-					<div class="thumbnail">
-						<img src="css/images/airlines/ac_white.jpg" alt="" />
-					</div>
-				</li>
-				
-
+				</li>								
 			</ul>
 	</div>
 	</div>
-	
 	</div>
-	
 	
 </footer>
 
