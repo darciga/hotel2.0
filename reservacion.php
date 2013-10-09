@@ -73,16 +73,16 @@
 		<div class="row">
 			<div class="span9">
 
-				<h3><span>Check-in</span> date</h3>
+				<h3><span>Fecha de</span> entrada</h3>
 				<div type="text" class="datepicker_from" name="from"></div>
-				<h3><span>Check-out</span> date</h3>
+				<h3><span>Fecha de</span> salida</h3>
 				<div type="text" class="datepicker_to" name="to"></div>
 
 			</div>			
 			<div class="span3">
 				<div class="row">
 					<div class="span3">
-						<h3><span>select</span> your room</h3>
+						<h3><span>Habitación</span> seleccionada</h3>
 						<div class="room_selector" data-price="34" data-adults="1" data-kids="1">
 							<h5><a href="#" class="pull-left"><i class="icon-chevron-left"></i></a>Single room<a href="#" class="pull-right "><i class="icon-chevron-right"></i></a></h5>
 							<a href="listings.php"><img src="css/images/rooms/single_room.jpg" alt="" /></a>
@@ -207,7 +207,6 @@
 	</div>
 	</div>
 </footer>
-	<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/jquery-ui.js"></script>
 	<script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>

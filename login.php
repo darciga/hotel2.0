@@ -13,6 +13,7 @@
 	<link rel="stylesheet" href="js/slider/default.css" type="text/css" media="screen" />
 	<link rel="stylesheet" href="css/nivo-slider.css" type="text/css" media="screen" />
 	<link rel="stylesheet" href="css/socialcount-with-icons.css" type="text/css" media="screen" />
+  <link href="favicon.ico" rel="icon" type="image/x-icon" />
 	<style>
 		div.ui-datepicker{
 			font-size:11px;
@@ -77,7 +78,7 @@
                         <!-- Username -->
                         <label class="control-label"  for="username">Nombre de usuario</label>
                         <div class="controls">
-                          <input type="text" id="username" name="username" placeholder="" class="input-xlarge">
+                          <input type="text" id="username" name="usuario" placeholder="" class="input-xlarge">
                         </div>
                       </div>
  
@@ -85,7 +86,7 @@
                         <!-- Password-->
                         <label class="control-label" for="password">Contraseña</label>
                         <div class="controls">
-                          <input type="password" id="password" name="password" placeholder="" class="input-xlarge">
+                          <input type="password" id="password" name="contraseña" placeholder="" class="input-xlarge">
                         </div>
                       </div>
                       <div class="control-group">

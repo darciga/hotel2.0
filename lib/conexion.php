@@ -32,7 +32,7 @@
 				die ($e->getMessage()."  ".mysqli_connect_error() );
 			}
 		}
-		function ejecutar_procsql($sql)
+		function ejecutar($sql)
 		{
 			$res=$this->conn->multi_query($sql);
 			$this->res_proced=array();
@@ -76,6 +76,8 @@
 		function cerrar_con()
 		{
 			$this->conn->close();
-		}		
+		}
+
+
     }
 ?>

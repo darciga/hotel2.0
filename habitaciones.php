@@ -73,11 +73,11 @@
 		<div class="row-fluid">
 			
 			<div class="span4">
-				<h3><span>SINGLE</span> ROOM</h3>
+				<h3><span>Nombre</span></h3>
 				<a href="reservacion.php"><img src="css/images/rooms/prieview.jpg" alt="" /></a>
 				<br/>
 				<br/>
-				<p> Wake up to this traditional room with 25-inch TV and on-demand movies. The comfortable room, with opening windows, has 1 single bed. Sleeps 1 adult. </p>
+				<p>Descripcion </p>
 				
 				<div class="row center">
 					<a class="btn btn-primary btn-large check-availability" href="reservacion.php">Reserva ahora</a>
@@ -86,22 +86,22 @@
 			</div>		
 			
 			<div class="span4">
-				<h3><span>Double</span> ROOM</h3>
+				<h3><span>Nombre</span></h3>
 				<a href="reservacion.php"><img src="css/images/rooms/prieview.jpg" alt="" /></a>
 				<br/>
 				<br/>
-				<p> Feel at home in this spacious room with sea views, a desk and a 21-inch TV. The bright and airy room, in calm tones, has 1 double bed. Maximum occupancy 2 adults. </p>
+				<p> Descripción</p>
 				<div class="row center">
 					<a class="btn btn-primary btn-large check-availability" href="reservacion.php">Reserva ahora</a>
 				</div>
 			</div>	
 			
 			<div class="span4">
-				<h3><span>Triple</span> ROOM</h3>
+				<h3><span>Nombre</span></h3>
 				<a href="reservacion.php"><img src="css/images/rooms/prieview.jpg" alt="" /></a>
 				<br/>
 				<br/>
-				<p>A spacious room with a sea view and a 32-inch TV. The bright and airy room, in cool, calm tones, has 1 double bed and a single bed. Maximum occupancy 3 adults. </p>
+				<p>Descripción</p>
 				<div class="row center">
 					<a class="btn btn-primary btn-large check-availability" href="reservacion.php">Reserva ahora</a>
 				</div>
@@ -111,11 +111,11 @@
 		
 		<div class="row-fluid">
 			<div class="span4">
-				<h3><span>Luxury</span> ROOM</h3>
+				<h3><span>Nombre</span></h3>
 				<a href="reservacion.php"><img src="css/images/rooms/prieview.jpg" alt="" /></a>
 				<br/>
 				<br/>
-				<p>  Wrap up in a fluffy bathrobe in this spacious room with views of the sea all around. The room has 2 double beds and a balcony. Maximum occupancy 4 adults. </p>
+				<p>  Descripción</p>
 				
 				<div class="row center">
 					<a class="btn btn-primary btn-large check-availability" href="reservacion.php">Reserva ahora</a>
@@ -124,11 +124,11 @@
 			</div>		
 			
 			<div class="span4">
-				<h3><span>Private</span> pool ROOM</h3>
+				<h3><span>Nombre</span></h3>
 				<a href="reservacion.php"><img src="css/images/rooms/prieview.jpg" alt="" /></a>
 				<br/>
 				<br/>
-				<p>A private pool, 2 double beds, sea view and a 32-inch TV. Unwind on the terrace in the oversized day bed and watch the sun set.  Maximum occupancy 4 adults.</p>
+				<p>Descripción</p>
 
 				<div class="row center">
 					<a class="btn btn-primary btn-large check-availability" href="reservacion.php">Reserva ahora</a>
@@ -137,11 +137,11 @@
 			</div>	
 			
 			<div class="span4">
-				<h3><span>Private </span> villa</h3>
+				<h3><span>Descripción </span></h3>
 				<a href="reservacion.php"><img src="css/images/rooms/prieview.jpg" alt="" /></a>
 				<br/>
 				<br/>
-				<p>Choose a Water Villa and enjoy sublime views of the sea. Enjoy the en-suite bathroom with its own sundeck, gazebo and rain showers. Maximum occupancy 5 adults.</p>
+				<p>Descripción.</p>
 
 				<div class="row center">
 					<a class="btn btn-primary btn-large check-availability" href="reservacion.php">Reserva ahora</a>

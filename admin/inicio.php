@@ -107,7 +107,7 @@
 							</div>
 							<div class="box-content">
 								<div class="page-header">
-									<h1>Bienvenido <small> al panel de administración el sistema de reservaciones</small></h1>
+									<h1>Bienvenido <small> al panel de administración del sistema de reservaciones</small></h1>
 								</div>
 								<div class="row-fluid">
 									<div class="span12">

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+<html lang="es"><head>
 	
     <meta charset="utf-8" />
     <title>Hotel Palmira</title>
@@ -68,13 +68,13 @@
 	
 	<div class="span12">	
 		<br /><br />
-		<h1>facilities and services</h1>
+		<h1>Servicios</h1>
 
 		<div class="row">
 			
 			<div class="span6">
-				<h3><span>Fitness</span> Center</h3>
-				<a href="general.html"><img src="css/images/facilities/gym.jpg" alt="" /></a>
+				<h3><span>Restaurant</span>-Bar</h3>
+				<a href="general.html"><img src="css/images/facilities/restaurant.jpg" alt="" /></a>
 				<p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui. </p>
 			</div>		
 			
@@ -159,15 +159,12 @@
 	</div>
 
 </footer>
-
-	<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/jquery-ui.js"></script>
 	<script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
 	<script type="text/javascript" src="js/jquery.nivo.slider.js"></script>
 	<script type="text/javascript" src="js/socialcount.min.js"></script>
 	<script src="js/jquery.quicksand.js" type="text/javascript"></script>
-
 	<script type="text/javascript" src="js/global.js"></script>
 </body>
 </html>

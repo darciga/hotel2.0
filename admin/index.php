@@ -30,12 +30,12 @@
 				<div class="row-fluid">
 					<div class="login-box">
 						<h2>Inicia Sesión</h2>
-						<form class="form-horizontal" action="valida.php" method="get" enctype="multipart/form-data" />
+						<form class="form-horizontal" action="valida.php" method="Post" enctype="multipart/form-data" />
 						<fieldset>
 
-							<input class="input-large span12" name="user" id="user" type="text" placeholder="escribe el nombre de usuario" />
+							<input class="input-large span12" name="usuario" id="user" type="text" placeholder="escribe el nombre de usuario" />
 
-							<input class="input-large span12" name="pass" id="pass" type="password" placeholder="escribe tu contraseña" />
+							<input class="input-large span12" name="contraseña" id="pass" type="password" placeholder="escribe tu contraseña" />
 
 							<div class="clearfix"></div>
 

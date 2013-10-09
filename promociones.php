@@ -2,7 +2,7 @@
 <html lang="es"><head>
 	
     <meta charset="utf-8" />
-    <title>Hotel - Bootstrap</title>
+    <title>Hotel Palmira</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="" />
     <meta name="author" content="" />
@@ -77,7 +77,7 @@
 			</div>	 
 			
 			<div class="span6">
-				<h3><span>Save 15-40%</span> at BootstrapHotel resort</h3>
+				<h3><span>Ahorra del 15-40%</span> y reserva la Suite </h3>
 				<p>Book your stay by January 31, and save 15-40% on weekend stays through December 31, at participating Hotels and Resorts.</p>
 			</div>
 		</div>

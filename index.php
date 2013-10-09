@@ -6,17 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-	
-
 	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" type="text/css" />
 	<link rel="stylesheet" href="bootstrap/css/bootstrap-responsive.min.css" type="text/css" />
 	<link rel="stylesheet" href="css/hotel.css" type="text/css" />
 	<link rel="stylesheet" href="css/hotel-responsive.css" type="text/css" />
-
-		<link rel="stylesheet" href="js/slider/default.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="js/slider/default.css" type="text/css" media="screen" />
 	<link rel="stylesheet" href="css/nivo-slider.css" type="text/css" media="screen" />
 	<link rel="stylesheet" href="css/socialcount-with-icons.css" type="text/css" media="screen" />
-	
 	<style>
 		div.ui-datepicker{
 			font-size:11px;
@@ -29,7 +25,6 @@
 	<![endif]-->
 	
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
-
 <body>
 	
 		<div class="container-fluid">
@@ -107,29 +102,22 @@
 		<iframe width="220" height="135" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com.mx/maps?source=s_q&amp;hl=es-419&amp;geocode=&amp;q=hotel+palmira&amp;aq=&amp;sll=23.554131,-102.6205&amp;sspn=24.13917,43.286133&amp;ie=UTF8&amp;hq=hotel+palmira&amp;hnear=Jiquilpan+de+Ju%C3%A1rez,+Michoac%C3%A1n&amp;split=1&amp;t=m&amp;ll=19.988965,-102.717552&amp;spn=0.006295,0.007524&amp;output=embed"></iframe><br /><small><a href="ubicacion.php">Ver mapa más grande</a></small>
 	</div>		
 </div>		
-
-
 </div> <!-- /container -->
 <br/>
 <br/>
 <br/>
-
 <footer>
 <div class="container">
 	<div class="row footer_section_pre">
-
 	<div class="span4">
 		<h4>Hotel Palmira<span class="line"></span></h4>
-
 		<p>Lázaro Cárdenas Sur # 200</p>
 		<p>Jiquilpan, Michoacan De Ocampo, Mexico<br />Tel: 01 353 533 0091  <br />Email: hotelpalmiramich@prodigy.net.mx</p>
-
 		<ul data-facebook-action="recommend" data-url="#" class="socialcount socialcount-small recommend grade-a">
 			<li class="facebook"><a title="Comparte en Facebook" href="https://www.facebook.com/HotelPalmira"><span class="social-icon icon-facebook"></span><span class="count"></span></a></li>
 		</ul>
 		<br />
 		<p class="copy">&copy; 2013 <a href="http://appsarea.com/">DJLabs</a></p>
-
 	</div>
 	<div class="span4">
 		<h4>Ofertas Especiales<span class="line"></span></h4>
@@ -153,15 +141,12 @@
 	</div>
 	</div>
 </footer>
-
-	
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/jquery-ui.js"></script>
 	<script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
 	<script type="text/javascript" src="js/jquery.nivo.slider.js"></script>
 	<script type="text/javascript" src="js/socialcount.min.js"></script>
 	<script src="js/jquery.quicksand.js" type="text/javascript"></script>
-
 	<script type="text/javascript" src="js/global.js"></script>
 </body>
 </html>

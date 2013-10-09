@@ -6,13 +6,13 @@
 		public $res;
 		function procedimientos()
 		{
-			$this->bd=new conexion("localhost","root","","demo_conect");
+			$this->bd=new conexion("localhost","root","","sistema_reservacion");
 			$this->res=array();
 		}
 		function mostrar_usuarios($idc)
 		{
 			$sql="call mostrar_usuarios($idc,@ban,@user,@pass);select @ban;select @user;select @pass";
-			$this->res=$this->bd->ejecutar_procsql($sql);
+			$this->res=$this->bd->ejecutar($sql);
 			$mjs="";
 			if($this->res[0][0]==-1)
 				$mjs = "El usuario $idc no existe";
@@ -24,14 +24,14 @@
 		
 		function buscar_usuario($usr,$pass)
 		{
-			$sql="call buscar_usuario($usr,$pass,@ban);select @ban;";
-			$this->res=$this->bd->ejecutar_procsql($sql);
-			$mjs=$this->res[0][0];//id usuario
-			if($this->res[0][0]==-1)
-				$mjs="La contraseña esta mal";
+			$sql="call buscar_user($usr,$pass,@ban);select @ban;";
+			$this->res=$this->bd->ejecutar($sql);
+			$id_c=$this->res[0][0];//id usuario
+			if($id_c->res[0][0]==-1)
+				$id_c="La contraseña esta mal";
 			if($this->res[0][0]==-2)
-				$mjs="El usuario $usr no existe";
-			return $mjs;		
+				$id_c="El usuario $usr no existe";
+			return $id_c;		
 		}
 	}
 ?>
