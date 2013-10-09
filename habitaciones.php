@@ -38,7 +38,7 @@
 					<a href="index.php">
 					<div class="row">
 						<div class="span3 logo">
-							<h1>Hotel<span>PalmirA</span></h1>
+							<h1>Hotel<span>Palmira</span></h1>
 							<p>&#9733;&#9733;&#9733;&#9734;&#9734;</p>
 						</div>
 					</div>
