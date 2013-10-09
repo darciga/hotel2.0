@@ -104,13 +104,24 @@
                   		<div id="legend">
                         <legend class="">Crea Una Cuenta</legend>
                       	</div>  
+                        
+                      <label>Nombre </label>
+                    <input type="text" value="" class="input-xlarge">
+                    <label>Apellido </label>
+                    <input type="text" value="" class="input-xlarge">
                     <label>Nombre de usuario</label>
                     <input type="text" value="" class="input-xlarge">
-                    <label>Nombre completo</label>
-                    <input type="text" value="" class="input-xlarge">
+                    <label>Contraseña </label>
+                    <input type="password" value="" class="input-xlarge">
+                  	 <label>Verificar Contraseña </label>
+                    <input type="password" value="" class="input-xlarge">
                     <label>Correo</label>
                     <input type="text" value="" class="input-xlarge">
-                    <label>Address</label>
+                     <label>Telefono </label>
+                    <input name="t1" type="text" class="input-mini" value="" maxlength="3"> -
+                    <input name="t2" type="text" class="input-mini" value="" maxlength="3"> -
+                    <input name="t3" type="text" class="input-mini" value="" maxlength="4">
+                    <label>Domicilio</label>
                     <textarea value="Smith" rows="3" class="input-xlarge">
                     </textarea>
  					<br/>
