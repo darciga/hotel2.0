@@ -77,8 +77,8 @@
 			</div>	 
 			
 			<div class="span6">
-				<h3><span>Ahorra del 15-40%</span> y reserva la Suite </h3>
-				<p>Book your stay by January 31, and save 15-40% on weekend stays through December 31, at participating Hotels and Resorts.</p>
+				<h3><span>Ahorra de 15 a 40%</span> y reserva la Suite </h3>
+				<p>Reserve su estancia antes del 31 de enero, y ahorre de 15 a 40% en estancias de fin de semana hasta el 31 de diciembre.</p>
 			</div>
 		</div>
 		<hr />
@@ -88,30 +88,13 @@
 			</div>	 
 			
 			<div class="span6">
-				<h3><span>FREE</span> Breakfast, <span>FREE</span> Internet, <span>FREE</span> Tour</h3>
+				<h3><span>Desayuno</span> gratis, <span>Internet</span> gratis</h3>
 				<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae hendrerit odio. Nam sit amet mi pretium nulla cursus euismod. Pellentesque non nisl quis erat blandit egestas.</p>
 			</div>
 		</div>
 		<hr />				
-		<div class="row">
-			<div class="span3">
-				<img alt="" src="css/images/promotions.png" />
-			</div>	 
+		
 			
-			<div class="span6">
-				<h3>Stay five nights and get <span>one night FREE!</span></h3>
-				<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae hendrerit odio. Nam sit amet mi pretium nulla cursus euismod. Pellentesque non nisl quis erat blandit egestas.</p>			</div>
-			</div>
-			<hr />
-			<div class="row">
-				<div class="span3">
-					<img alt="" src="css/images/rooms.jpg" />
-				</div>	 
-				
-				<div class="span6">
-					<h3><span>Save 20% OFF</span> by booking with us in advance.</h3>
-					<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae hendrerit odio. Nam sit amet mi pretium nulla cursus euismod. Pellentesque non nisl quis erat blandit egestas.</p>			</div>
-				</div>
 				<br /><br />
 				
 			</div>

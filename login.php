@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es"><head>
-	
   <meta charset="utf-8" />
   <title>Hotel Palmira</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -24,9 +23,7 @@
 		<link rel="stylesheet" href="css/bootstrap_ie7.css" type="text/css">
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
-	
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
-
 <body>
 	<div class="container-fluid">
 			<div class="row"><!-- start header -->
@@ -36,7 +33,7 @@
 						<div class="span3 logo">
               				<h1>Hotel<span>Palmira</span></h1>
               				<p>&#9733;&#9733;&#9733;&#9734;&#9734;</p>
-		            	</div>
+		        </div>
 					</div>
 					</a>
 				</div>		
@@ -105,7 +102,7 @@
                         <legend class="">Crea Una Cuenta</legend>
                       	</div>  
                         
-                      <label>Nombre </label>
+                    <label>Nombre </label>
                     <input type="text" value="" class="input-xlarge" autofocus="autofocus">
                     <label>Apellido </label>
                     <input type="text" value="" class="input-xlarge">
@@ -113,11 +110,11 @@
                     <input type="text" value="" class="input-xlarge">
                     <label>Contraseña </label>
                     <input type="password" value="" class="input-xlarge">
-                  	 <label>Verificar Contraseña </label>
+                  	<label>Verificar Contraseña </label>
                     <input type="password" value="" class="input-xlarge">
                     <label>Correo</label>
                     <input type="text" value="" class="input-xlarge">
-                     <label>Telefono </label>
+                    <label>Telefono </label>
                     <input name="t1" type="text" class="input-mini" value="" maxlength="3"> -
                     <input name="t2" type="text" class="input-mini" value="" maxlength="3"> -
                     <input name="t3" type="text" class="input-mini" value="" maxlength="4">

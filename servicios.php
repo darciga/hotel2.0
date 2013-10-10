@@ -84,34 +84,7 @@
 				<p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui. </p>
 			</div>				
 			
-			<div class="span6">
-				<h3><span>fun</span> &amp; sports</h3>
-				<a href="general.html"><img src="css/images/facilities/golf.jpg" alt="" /></a>
-				<p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui. </p>
-			</div>		
-			
-			<div class="span6">
-				<h3><span>Swimming </span> pool</h3>
-				<a href="general.html"><img src="css/images/facilities/swimming_pool.jpg" alt="" /></a>
-				<p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui. </p>
-			</div>				
-			
-			<div class="span6">
-				<h3><span>Water</span> sports</h3>
-				<a href="general.html"><img src="css/images/facilities/scuba.jpg" alt="" /></a>
-				<p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui. </p>
-			</div>		
-			
-			<div class="span6">
-				<h3><span>Food </span> &amp; drink</h3>
-				<a href="general.html"><img src="css/images/facilities/restaurant.jpg" alt="" /></a>
-				<p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui. </p>
-			</div>			
-			
 		</div>
-		
-
-
 		
 	</div>
 	
