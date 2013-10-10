@@ -53,7 +53,7 @@
 				</div>
 			</div><!-- end header -->
 	<div class="row book-start">
-	<form class="form-horizontal" action='validar.php' method="POST">
+	<form action='book.php' method="POST">
 	<div class="span12">	
 		<br /><br />
 		<h1>Reserva tu habiatación<br /><small>¿Cuándo quieres reservar con nosotros?</small></h1>
@@ -65,14 +65,15 @@
 							<h5>Nombre de habitación</h5>
 							<img src="css/images/rooms/single_room.jpg" alt="" />
 							<p>Descripción</p>
+							<input type="hidden" value="habitacioseleccionada" name="hab">
 						</div>						
 					</div>					
 		<div class="span3">
 				<h3><span>Fechas</span></h3>
 				 <label>Fecha de entrada </label>
-                    <input type="date" value="" class="input-large">
+                    <input type="date" value="" class="input-large" name="checkin" required>
                     <label>Fecha de salida </label>
-                    <input type="date" value="" class="input-large">
+                    <input type="date" value="" class="input-large" name="checkout" required>
 			</div>	
 			
 				<div class="span3">
@@ -80,7 +81,7 @@
 					<div class="control-group">
 							<label class="control-label">Adultos</label>
 							<div class="controls">
-								<select class="span1 select_adults">
+								<select class="span1 select_adults" name="adul" required>
 									<option />1
 									<option />2
 									<option />3
@@ -93,7 +94,7 @@
 						<div class="control-group">
 							<label class="control-label">Niños</label>
 							<div class="controls">
-								<select class="span1 select_kids">
+								<select class="span1 select_kids" name="nin">
 									<option />1
 									<option />2
 									<option />3
@@ -105,7 +106,7 @@
 					</div>
 					<br/>
 					<div class="span2">
-						<a class="btn btn-primary btn-large book-now" href="book.php">Reserva ahora!</a>
+						<button class="btn btn-success" type="submit">Reserva ahora!</button>
 					</div>
 		</div>
 	</div>

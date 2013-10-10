@@ -78,7 +78,7 @@
                         <!-- Username -->
                         <label class="control-label"  for="username">Nombre de usuario</label>
                         <div class="controls">
-                          <input type="text" id="username" name="usuario" placeholder="" class="input-xlarge">
+                          <input autofocus="autofocus" type="text" id="username" name="usuario" placeholder="" class="input-xlarge" >
                         </div>
                       </div>
  
@@ -106,7 +106,7 @@
                       	</div>  
                         
                       <label>Nombre </label>
-                    <input type="text" value="" class="input-xlarge">
+                    <input type="text" value="" class="input-xlarge" autofocus="autofocus">
                     <label>Apellido </label>
                     <input type="text" value="" class="input-xlarge">
                     <label>Nombre de usuario</label>
@@ -151,7 +151,7 @@
       <li class="facebook"><a title="Comparte en Facebook" href="https://www.facebook.com/HotelPalmira"><span class="social-icon icon-facebook"></span><span class="count"></span></a></li>
     </ul>
     <br />
-    <p class="copy">&copy; 2013 <a href="http://appsarea.com/">DJLabs</a></p>
+    <p class="copy">&copy; 2013 <a href="#">DJLabs</a></p>
 
   </div>
   <div class="span4">
