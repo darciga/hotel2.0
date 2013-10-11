@@ -18,7 +18,7 @@
 			font-size:11px;
 		}
 	</style>
-		<
+		
     <!--[if lt IE 9]>
 		<link rel="stylesheet" href="css/bootstrap_ie7.css" type="text/css">
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -32,8 +32,8 @@
 					<div class="row">
 						<div class="span3 logo">
               				<h1>Hotel<span>Palmira</span></h1>
-              				<p>&#9733;&#9733;&#9733;&#9734;&#9734;</p>
-		        </div>
+              				<p>&#9733;&#9733;&#9733;&#9734;&#9734;</p
+		        ></div>
 					</div>
 					</a>
 				</div>		
@@ -50,50 +50,54 @@
 									<li class=""><a href="index.php">Inicio</a></li>
                   					<li class=""><a href="habitaciones.php">Habitaciones</a></li>
                   					<li class=""><a href="ubicacion.php">Ubicación</a></li>
-                  					<li class="active"><a href="login.php">Inicia Sesión</a></li>
+                  					<li class="active"><a href="registro.php">Inicia Sesión</a></li>
+                  					<div align="right"></div>
 								</ul>
 							</div><!-- /.nav-collapse -->
 						</div>
 					</div><!-- /navbar -->
 				</div>
 			</div><!-- end header -->
-	</div> <!-- /container -->
-	<div class="container-fluid" >
-            <div class="well">
-        
-               
-            
-              <div id="" class="tab-content">
-                <div class="tab-pane active in" id="login">
-                  <form class="form-horizontal" action='validar.php' method="POST">
-                    <fieldset>
-                      <div id="legend">
-                        <legend class="">Inicia Sesión</legend>
-                      </div>    
-                      <div class="control-group">
-                        <!-- Username -->
-                        <label class="control-label"  for="username">Nombre de usuario</label>
-                        <div class="controls">
-                          <input autofocus="autofocus" type="text" id="username" name="usuario" placeholder="" class="input-xlarge" >
-                        </div>
-                      </div>
- 
-                      <div class="control-group">
-                        <!-- Password-->
-                        <label class="control-label" for="password">Contraseña</label>
-                        <div class="controls">
-                          <input type="password" id="password" name="contraseña" placeholder="" class="input-xlarge">
-                        </div>
-                      </div>
-                      <div class="control-group">
-                        <!-- Button -->
-                        <div class="controls">
-                          <button class="btn btn-success" type="submit">Login</button>
-                        </div>
-                      </div>
+			</div> <!-- /container -->
+			<div class="container-fluid" >
+            <div class="well">              
+                  <form class="form-horizontal" action='crearcuenta.php' method="POST">
+                  	<fieldset>
+                  		<div id="legend">
+                        <legend class="">Registro de usuario</legend>
+                      	</div>  
+                        
+                    <label>Nombre </label>
+                    <input type="text" value="" class="input-xlarge" autofocus="autofocus">
+                    <label>Apellido </label>
+                    <input type="text" value="" class="input-xlarge">
+                    <label>Nombre de usuario</label>
+                    <input type="text" value="" class="input-xlarge">
+                    <label>Contraseña </label>
+                    <input type="password" value="" class="input-xlarge">
+                  	<label>Verificar Contraseña </label>
+                    <input type="password" value="" class="input-xlarge">
+                    <label>Correo</label>
+                    <input type="text" value="" class="input-xlarge">
+                    <label>Telefono </label>
+                    <input name="t1" type="text" class="input-mini" value="" maxlength="3"> -
+                    <input name="t2" type="text" class="input-mini" value="" maxlength="3"> -
+                    <input name="t3" type="text" class="input-mini" value="" maxlength="4">
+                    <label>Domicilio</label>
+                    <textarea value="Smith" rows="3" class="input-xlarge">
+                    </textarea>
+ 					<br/>
+ 					<br/>
+                    <div>
+                      <button class="btn btn-primary" type="submit">Crear Cuenta</button>
+                    </div>
                     </fieldset>
-                  </form>                
+                  </form>
                 </div>
+            </div>
+          </div>
+        
+    </div>
 
 <footer>
 <div class="container">
