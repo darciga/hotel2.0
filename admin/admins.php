@@ -105,14 +105,14 @@
 					<div class="row-fluid">
 						<div class="box span12">
 							<div class="box-header" data-original-title="">
-								<h2><i class="icon-user"></i><span class="break"></span>Reservaciones</h2>
+								<h2><i class="icon-user"></i><span class="break"></span>Administradores</h2>
 
 							</div>
 							<div class="box-content">
 								<table class="table table-striped table-bordered bootstrap-datatable datatable">
 									<thead>
 										<tr>
-											<th>Username</th>
+											<th>Nombre</th>
 											<th>Date registered</th>
 											<th>Role</th>
 											<th>Status</th>

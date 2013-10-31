@@ -27,10 +27,10 @@
 	</head>
 	<body>
 		<div class="container-fluid">
-			<div class="span12">
+
 			<div class="row">
 				<!-- start header -->
-				<div class="span4 logo">
+				<div class="span5 logo">
 					<a href="index.php">
 					<div class="row">
 						<div class="span3 logo">
@@ -41,10 +41,11 @@
 						</div>
 					</div> </a>
 				</div>
-				<div class="span12 pull-right main_menu">
+				<div class="span6 pull-right main_menu">
 					<div class="navbar">
 						<div class="container">
-							<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></a>
+							<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a>
+
 							<div class="nav-collapse">
 								<ul class="nav nav-pills">
 									<li class="">
@@ -57,10 +58,7 @@
 										<a href="ubicacion.php">Ubicación</a>
 									</li>
 									<li class="active">
-										<a href="login.php">Inicia Sesión</a>
-									</li>
-									<li class="">
-										<a href="login.php">Registrate</a>
+										<a href="login.php" >Inicia Sesión</a>
 									</li>
 								</ul>
 							</div><!-- /.nav-collapse -->
@@ -68,58 +66,62 @@
 					</div><!-- /navbar -->
 				</div>
 			</div><!-- end header -->
-			</div><!--/span12-->
+
 		</div>
 		<!-- /container -->
 		<div class="container-fluid" >
 			<div class="row">
 				<br/>
 				<br/>
-			<div class="span12">
-				<div class="span6">
-					<form class="form-horizontal" action='validar.php' method="POST">
-						<fieldset class="well">
-							<div id="legend">
-								<legend class="">
-									Inicia Sesión
-								</legend>
-							</div>
-							<div class="control-group">
-								<!-- Username -->
-								<label class="control-label"  for="username">Nombre de usuario</label>
-								<div class="controls">
-									<input autofocus="autofocus" type="text" id="username" name="usuario" placeholder="" class="input-xlarge" >
+				<div class="span12">
+					<div class="span6">
+						<form class="form-horizontal" action='validar.php' method="POST">
+							<fieldset class="well">
+								<div id="legend">
+									<legend class="">
+										Inicia Sesión
+									</legend>
 								</div>
-							</div>
-
-							<div class="control-group">
-								<!-- Password-->
-								<label class="control-label" for="password">Contraseña</label>
-								<div class="controls">
-									<input type="password" id="password" name="contraseña" placeholder="" class="input-xlarge">
-								</div>
-							</div>
-							<div class="control-group">
-								<!-- Button -->
-
-								<div class="span3">
-
-									<button class="btn btn-success" type="submit">
-										Login
-									</button>
-
+								<div class="control-group">
+									<!-- Username -->
+									<label class="control-label"  for="username">Nombre de usuario</label>
+									<div class="controls">
+										<input autofocus="autofocus" type="text" id="username" name="usuario" placeholder="" class="input-xlarge" >
+									</div>
 								</div>
 
-							</div>
-						</fieldset>
-					</form>
+								<div class="control-group">
+									<!-- Password-->
+									<label class="control-label" for="password">Contraseña</label>
+									<div class="controls">
+										<input type="password" id="password" name="contraseña" placeholder="" class="input-xlarge">
+									</div>
+								</div>
+								<div class="control-group">
+									<!-- Button -->
+
+									<div class="span3">
+
+										<button class="btn btn-success" type="submit">
+											Login
+										</button>
+
+									</div>
+
+								</div>
+							</fieldset>
+						</form>
 					</div><!--/span6-->
 					<div class="span3">
 						<h3>Inicio de Sesion</h3>
-						
-							<p> Comienza reservando tu habitación.</p>
-							<p> Si no tienes una cuenta  creala en este momento.</p> 
-						
+
+						<p>
+							Comienza reservando tu habitación.
+						</p>
+						<p>
+							Si no tienes una cuenta  creala en este momento.
+						</p>
+
 						<div class="pull-right">
 
 							<a href="registro.php">
@@ -130,8 +132,7 @@
 						</div>
 					</div>
 
-				
-			</div><!--/span9-->
+				</div><!--/span9-->
 			</div><!--/row-->
 		</div><!--/conteiner-->
 		<br/>

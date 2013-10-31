@@ -21,14 +21,10 @@
 					<legend>Ingresa los datos</legend>
 					<label>Usuario:</label>
 					<br />
-					<input name="usuario" type="text"  />
+					<input name="idc" type="text"  />
 					<br />
 					<br />		  
-					<label>Contraseña:</label>
-					<br />
-					<input name="contraseña" type="password"/>
-					<br />	
-					<br />		
+						
 					<input type="submit" name"ingresar" value="Ingresar &rarr;"/>
 					</fieldset>
 				</form>	

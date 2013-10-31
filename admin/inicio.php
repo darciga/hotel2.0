@@ -1,3 +1,7 @@
+<?php
+session_start();
+$usuario=$_SESSION['user'];
+?>
 <!DOCTYPE html>
 <html lang="es">
 	<head>
@@ -50,7 +54,7 @@
 								<a class="btn account dropdown-toggle" data-toggle="dropdown" href="#">
 								<div class="user">
 									<span class="hello">Bienvenido!</span>
-									<span class="name">Administrador</span>
+									<span class="name"><?php echo $usuario;?></span>
 								</div> </a>
 								<ul class="dropdown-menu">
 									<li class="dropdown-menu-title">
@@ -58,7 +62,7 @@
 									</li>
 
 									<li>
-										<a href="index.php"><i class="icon-off"></i> Cerrar Sesión</a>
+										<a href="logout.php"><i class="icon-off"></i> Cerrar Sesión</a>
 									</li>
 								</ul>
 							</li>
@@ -91,6 +95,9 @@
 							<li>
 								<a href="habitaciones.php"><span class="hidden-tablet"> Habitaciones</span></a>
 							</li>
+							<li>
+								<a href="admins.php"><span class="hidden-tablet"> Usuarios del sistema</span></a>
+							</li>
 
 						</ul>
 					</div>
@@ -113,7 +120,7 @@
 									<div class="span12">
 										<h3>En este panel de administración podras gestionar tus: </h3>
 
-										<div class="span3 smallstat box mobileHalf" ontablet="span6" ondesktop="span3">
+										<div class="span3 smallstat box mobileHalf" ontablet="span3" ondesktop="span3">
 											<div class="boxchart-overlay blue">
 												<div class="boxchart">
 													5,6,7,2,0,4,2,4,8,2,3,3,2
@@ -123,7 +130,7 @@
 											<span class="value">4</span>
 										</div>
 
-										<div class="span3 smallstat box mobileHalf" ontablet="span6" ondesktop="span3">
+										<div class="span3 smallstat box mobileHalf" ontablet="span3" ondesktop="span3">
 											<div class="boxchart-overlay red">
 												<div class="boxchart">
 													1,2,6,4,0,8,2,4,5,3,1,7,5
@@ -133,7 +140,7 @@
 											<span class="value">4</span>
 										</div>
 
-										<div class="span3 smallstat box mobileHalf noMargin" ontablet="span6" ondesktop="span3">
+										<div class="span3 smallstat box mobileHalf noMargin" ontablet="span3" ondesktop="span3">
 											<i class="icon-download-alt green"></i>
 											<span class="title"><a href="habitaciones.php">Habitaciones</a></span>
 											<span class="value">9</span>

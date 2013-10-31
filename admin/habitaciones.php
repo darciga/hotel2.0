@@ -91,6 +91,9 @@
 							<li>
 								<a href="habitaciones.php"><span class="hidden-tablet"> Habitaciones</span></a>
 							</li>
+							<li>
+								<a href="admins.php"><span class="hidden-tablet"> Usuarios del sistema</span></a>
+							</li>
 
 						</ul>
 					</div>

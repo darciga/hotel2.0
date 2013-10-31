@@ -2,10 +2,10 @@
     include_once 'procedimientos.php';
 	$proc= new procedimientos();
 	
-		$user=$_POST['usuario'];
-		$pass=$_POST['contraseña'];
-		echo "$user <br/> $pass <br/>";
-		$msj =$proc->buscar_usuario($user,$pass);
+		$user=$_POST['idc'];
+		
+		
+		$msj =$proc->mostrar_usuarios($user);
 		echo "<br/>$msj";
 	
 ?>
