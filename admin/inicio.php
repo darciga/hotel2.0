@@ -1,6 +1,14 @@
 <?php
+require 'conexion.php';
 session_start();
 $usuario=$_SESSION['user'];
+$conectar=Conectarse();
+$consulta="SELECT id_cliente FROM clientes";
+$resultado=mysql_query($consulta,$conectar);
+$número_clientes = mysql_num_rows($resultado);
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -127,7 +135,7 @@ $usuario=$_SESSION['user'];
 												</div>
 											</div>
 											<span class="title"><a href="clientes.php">Clientes</a></span>
-											<span class="value">4</span>
+											<span class="value"><?php echo $número_clientes; ?></span>
 										</div>
 
 										<div class="span3 smallstat box mobileHalf" ontablet="span3" ondesktop="span3">
