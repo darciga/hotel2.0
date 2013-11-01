@@ -1,0 +1,48 @@
+footer{
+	text-align:center;
+	font-size:0.8em;
+	padding: 10px 0;
+}
+
+#wraper{
+	margin:0 auto;
+	overflow:hidden;
+	width:800px;
+	min-height:300px;
+}
+
+.center{
+	margin: 0 auto;
+}
+
+.addUser{
+	width: 150px;
+	height: auto;
+	padding: 10px;
+}
+
+#ajaxLoader{
+	
+	margin-top:10px;
+	width:94%;
+	height:auto;
+	border: 1px solid rgba(0,0,0,0.20);
+	border-radius: 4px;
+	font-size: 0.8em;
+	padding: 4px;
+	outline: none;
+	background: #FFF;
+	text-align: center;
+}
+
+#ajaxLoader img {
+	vertical-align: middle;
+}
+
+#listadoUsers .centerTXT{
+	text-align: center;
+}
+
+.error{
+	font-size:0.8em;
+}

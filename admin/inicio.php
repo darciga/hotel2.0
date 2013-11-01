@@ -1,14 +1,18 @@
 <?php
 require 'conexion.php';
 session_start();
-$usuario=$_SESSION['user'];
+
+$usuario=$_SESSION['nombre'];
 $conectar=Conectarse();
 $consulta="SELECT id_cliente FROM clientes";
 $resultado=mysql_query($consulta,$conectar);
-$número_clientes = mysql_num_rows($resultado);
-
-
-
+$numero_clientes = mysql_num_rows($resultado);
+$sql = "SELECT id_reservacion FROM reservaciones";
+$resultado=mysql_query($sql,$conectar);
+$num_re=mysql_num_rows($resultado);
+$sql = "SELECT * FROM habitaciones WHERE estado like 'desocupada%'";
+$resultado=mysql_query($sql,$conectar);
+$num_hab=mysql_num_rows($resultado);
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -29,6 +33,7 @@ $número_clientes = mysql_num_rows($resultado);
 		<link href="css/style.min.css" rel="stylesheet" />
 		<link href="css/style-responsive.min.css" rel="stylesheet" />
 		<link href="css/retina.css" rel="stylesheet" />
+		
 		<!-- end: CSS -->
 
 		<!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -124,7 +129,7 @@ $número_clientes = mysql_num_rows($resultado);
 								<div class="page-header">
 									<h1>Bienvenido <small> al panel de administración del sistema de reservaciones</small></h1>
 								</div>
-								<div class="row-fluid">
+								<div class="row-fluid" style="height: 339px;">
 									<div class="span12">
 										<h3>En este panel de administración podras gestionar tus: </h3>
 
@@ -135,7 +140,7 @@ $número_clientes = mysql_num_rows($resultado);
 												</div>
 											</div>
 											<span class="title"><a href="clientes.php">Clientes</a></span>
-											<span class="value"><?php echo $número_clientes; ?></span>
+											<span class="value"><?php echo $numero_clientes; ?></span>
 										</div>
 
 										<div class="span3 smallstat box mobileHalf" ontablet="span3" ondesktop="span3">
@@ -145,13 +150,13 @@ $número_clientes = mysql_num_rows($resultado);
 												</div>
 											</div>
 											<span class="title"><a href="reservaciones.php">Reservaciones</a></span>
-											<span class="value">4</span>
+											<span class="value"><?php echo $num_re ?></span>
 										</div>
 
 										<div class="span3 smallstat box mobileHalf noMargin" ontablet="span3" ondesktop="span3">
 											<i class="icon-download-alt green"></i>
 											<span class="title"><a href="habitaciones.php">Habitaciones</a></span>
-											<span class="value">9</span>
+											<span class="value"><?php echo $num_hab ?></span>
 										</div>
 
 									</div>

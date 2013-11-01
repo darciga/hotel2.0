@@ -1,3 +1,15 @@
+<?php 
+session_start();
+if(isset($_SESSION['id']))
+{
+	$var=$_SESSION["id"];
+}
+else {
+	$var=0;
+}
+
+
+?>
 <!DOCTYPE html>
 <html lang="es">
 	<head>
@@ -33,9 +45,9 @@
 						<form class="form-horizontal" action="valida.php" method="Post" enctype="multipart/form-data" />
 						<fieldset>
 
-							<input class="input-large span12" name="usuario" id="user" type="text" placeholder="escribe el nombre de usuario" />
+							<input class="input-large span12" name="usuario" id="user" type="text" placeholder="nombre de usuario..." required/>
 
-							<input class="input-large span12" name="contraseña" id="pass" type="password" placeholder="escribe tu contraseña" />
+							<input class="input-large span12" name="contraseña" id="pass" type="password" placeholder="tu contraseña..." required />
 
 							<div class="clearfix"></div>
 
@@ -46,6 +58,16 @@
 
 						</form>
 						<hr />
+						<?php
+						if ($var==-1) {
+							echo '<div class="alert alert-error">';
+  							echo '<button type="button" class="close" data-dismiss="alert">&times;</button>';
+  							echo '<h4>Error!</h4> al ingresar tus datos...</div>';
+						
+							
+						}
+						
+						?>
 
 					</div>
 				</div><!--/row-->
