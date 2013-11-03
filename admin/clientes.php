@@ -1,7 +1,11 @@
-<?php 
+<?php
+session_start();
+
+$usuario=$_SESSION['nombre'];
+
 ini_set("display_error", false);
 
-include('includes/conexion.php');
+include('../includes/conexion.php');
 
 if($errorConexionDB == false){
 	$cosultaClientes = consultarClientes($mysqli);	
@@ -26,23 +30,23 @@ else {
 		<!-- end: Mobile Specific -->
 
 		<!-- start: CSS -->
+		<link href="css/smoothness/jquery-ui-1.8.23.custom.css" rel="stylesheet" />
 		<link href="css/bootstrap.min.css" rel="stylesheet" />
 		<link href="css/bootstrap-responsive.min.css" rel="stylesheet" />
 		<link href="css/style.min.css" rel="stylesheet" />
-		<link href="css/style-responsive.min.css" rel="stylesheet" />
 		<link href="css/retina.css" rel="stylesheet" />
+		<link href="css/style-responsive.min.css" rel="stylesheet" />
 		<link type="text/css" href="css/master.css" rel="stylesheet" />
-
-		<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-		<script type="text/javascript" src="js/jquery-ui-1.10.3.custom.min.js"></script>
-
-		
+		<!-- end: CSS -->
+		<!-- start: JavaScript Necesarios para bootstrap-->
+		<script type="text/javascript" src="js/jquery_ui/jquery-1.8.0.js"></script>
+		<script type="text/javascript" src="js/jquery_ui/jquery-ui-1.8.23.custom.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap/bootstrap.min.js"></script>
 		<script type="text/javascript" src="js/jquery-validation-1.10.0/dist/jquery.validate.min.js"></script>
 		<script type="text/javascript" src="js/jquery-validation-1.10.0/lib/jquery.metadata.js"></script>
 		<script type="text/javascript" src="js/jquery-validation-1.10.0/localization/messages_es.js"></script>
-		<script type="text/javascript" src="js/mainJavaScript.js"></script>
-		<!-- end: CSS -->
-
+		<script type="text/javascript" src="js/Clientes.js"></script>
+		<!-- end: JavaScript-->
 		<!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
 		<!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -52,25 +56,24 @@ else {
 		<!--[if IE 9]>
 		<link id="ie9style" href="css/ie9.css" rel="stylesheet">
 		<![endif]-->
-
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	</head>
-	<script type="text/javascript">
-		$function(){
-			$('#editarUsuario').dialog({
-				autoOpen:true;
-			});
-		});
 		
 	</script>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	</head>
 
 	<body>
 		<!-- start: Header -->
 		<div class="navbar">
 			<div class="navbar-inner">
 				<div class="container-fluid">
-					<a class="btn btn-navbar" data-toggle="collapse" data-target=".top-nav.nav-collapse,.sidebar-nav.nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a>
-					<a id="main-menu-toggle" class="hidden-phone open"><i class="icon-reorder"></i></a>
+					<a class="btn btn-navbar" data-toggle="collapse" data-target=".top-nav.nav-collapse,.sidebar-nav.nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					</a>
+					<a id="main-menu-toggle" class="hidden-phone open">
+						<i class="icon-reorder"></i>
+					</a>
 					<div class="row-fluid">
 						<a class="brand span2" href="inicio.php"><span>Hotel</span></a>
 					</div>
@@ -82,7 +85,7 @@ else {
 								<a class="btn account dropdown-toggle" data-toggle="dropdown" href="#">
 								<div class="user">
 									<span class="hello">Bienvenido!</span>
-									<span class="name">Administrador</span>
+									<span class="name"><?php echo $usuario;?></span>
 								</div> </a>
 								<ul class="dropdown-menu">
 									<li class="dropdown-menu-title">
@@ -133,8 +136,39 @@ else {
 				<!-- end: Main Menu -->
 				
 				<!-- Formularios Ocultos -->
-				<div class="hide" id="editarUsuario" title="Editar Usuario">
-					<form action="" method="post" id="formUser" class="formUser">
+				<div class="hide" id="agregarCliente" Title="Agregar Cliente">
+					<form action="" method="post" id="formClientes" class="formClientes">
+						<fieldset id="ocultos">
+							<input type="hidden" id="addCli" name="accion" class="{required:true}"/>
+			    			<input type="hidden" id="id_cliente" name="id_cliente" class="{required:true}"  value="0"/>
+	 					</fieldset>
+	 					<fieldset id="datosCliente">
+	 						<p>Nombre</p>
+							<span></span>
+							<input type="text" id="nombre_cli" name="nombre_cli" placeholder="Nombre Completo" class="{required:true,maxlength:120} span3"  />
+							<p>Nombre de Usuario</p>
+							<span></span>
+							<input type="text" id="username" name="username" placeholder="Nombre de usuario" class="{required:true,maxlength:20} span3" />
+							<p>Contraseña</p>
+							<span></span>
+							<input type="password" id="pass" name="pass" placeholder="Contraseña" class="{required:true,maxlength:20} span3" />
+							<p>Correo Electronico</p>
+							<span></span>
+							<input type="email" id="email" name="email" placeholder="Correo electronico" class="{required:true,maxlength:25} span3" />
+							<p>Telefono</p>
+							<span></span>
+							<input type="text" id="tel" name="tel" placeholder="Telefono" class="{required:true,maxlength:30} span3"/>
+
+								<fieldset id="btnAgregar" style="text-align:center;">
+								<input type="submit" id="continuar" value="Continuar" />
+								</fieldset>
+
+								<fieldset id="ajaxLoader" class="ajaxLoader hide">
+								<img src="img/default-loader.gif">
+								<p>Espere un momento...</p>
+								</fieldset>
+
+	 					</fieldset>
 						
 						
 					</form>
@@ -146,12 +180,15 @@ else {
 				<div id="content" class="span10">
 					<div class="row-fluid">
 						<div class="box span12">
-							<div class="box-header" data-original-title="">
+							<div class="box-header">
 								<h2><i class="icon-user"></i><span class="break"></span>Clientes</h2>
 
 							</div>
+							<div id="btnAddCliente" class="center addUser">
+		    					<button id="goNuevoCliente" class="btn btn-small btn-info"><i class="icon-plus"></i> Agregar Cliente</button>
+		    				</div>
 							<div class="box-content">
-								<table class="table table-striped table-bordered bootstrap-datatable datatable">
+								<table id="listadoclientes" class="table table-striped table-bordered bootstrap-datatable datatable">
 									<thead>
 										<tr>
 											<th>Nombre</th>
@@ -161,7 +198,7 @@ else {
 											<th>Acciones</th>
 										</tr>
 									</thead>
-									<tbody id="listaUsuariosOk">
+									<tbody id="listaClientesOk">
 										<?php echo $cosultaClientes?>
 										
 									</tbody>
@@ -185,42 +222,8 @@ else {
 
 		</div><!--/.fluid-container-->
 
-		<!-- start: JavaScript-->
-		<script src="js/jquery-1.10.2.min.js"></script>
-		<script src="js/jquery-migrate-1.2.1.min.js"></script>
-		<script src="js/jquery-ui-1.10.3.custom.min.js"></script>
-		<script src="js/jquery.ui.touch-punch.js"></script>
-		<script src="js/modernizr.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-		<script src="js/jquery.cookie.js"></script>
-		<script src='js/fullcalendar.min.js'></script>
-		<script src='js/jquery.dataTables.min.js'></script>
-		<script src="js/excanvas.js"></script>
-		<script src="js/jquery.flot.js"></script>
-		<script src="js/jquery.flot.pie.js"></script>
-		<script src="js/jquery.flot.stack.js"></script>
-		<script src="js/jquery.flot.resize.min.js"></script>
-		<script src="js/jquery.flot.time.js"></script>
-
-		<script src="js/jquery.elfinder.min.js"></script>
-		<script src="js/jquery.raty.min.js"></script>
-		<script src="js/jquery.iphone.toggle.js"></script>
-		<script src="js/jquery.uploadify-3.1.min.js"></script>
-		<script src="js/jquery.gritter.min.js"></script>
-		<script src="js/jquery.imagesloaded.js"></script>
-		<script src="js/jquery.masonry.min.js"></script>
-		<script src="js/jquery.knob.modified.js"></script>
-		<script src="js/jquery.sparkline.min.js"></script>
-		<script src="js/counter.min.js"></script>
-		<script src="js/raphael.2.1.0.min.js"></script>
-		<script src="js/justgage.1.0.1.min.js"></script>
-		<script src="js/jquery.autosize.min.js"></script>
-		<script src="js/retina.js"></script>
-		<script src="js/jquery.placeholder.min.js"></script>
-		<script src="js/wizard.min.js"></script>
-		<script src="js/core.min.js"></script>
-		<script src="js/charts.min.js"></script>
-		<script src="js/custom.min.js"></script>
+		<!-- start: JavaScript Necesarios para bootstrap-->
+	
 		<!-- end: JavaScript-->
 
 	</body>

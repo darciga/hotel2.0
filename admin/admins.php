@@ -2,7 +2,7 @@
 
 ini_set("display_error", false);
 
-include('includes/conexion.php');
+include('../includes/conexion.php');
 
 if($errorConexionDB == false){
 	$consultaadmins = consultarAdmins($mysqli);	
@@ -43,7 +43,7 @@ else {
 		<script type="text/javascript" src="js/jquery-validation-1.10.0/dist/jquery.validate.min.js"></script>
 		<script type="text/javascript" src="js/jquery-validation-1.10.0/lib/jquery.metadata.js"></script>
 		<script type="text/javascript" src="js/jquery-validation-1.10.0/localization/messages_es.js"></script>
-		<script type="text/javascript" src="js/mainJavaScript.js"></script>
+		<script type="text/javascript" src="js/Admins.js"></script>
 		<!-- end: CSS -->
 
 		<!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->

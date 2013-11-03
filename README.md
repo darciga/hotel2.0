@@ -1,1 +1,1 @@
-Sistema creado con PHP y MySql, HTML5 y CSS3
+Sistema creado con PHP y MySql, HTML5, CSS3, JQuery
