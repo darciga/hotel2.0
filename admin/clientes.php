@@ -1,12 +1,8 @@
 <?php
 session_start();
-
 $usuario=$_SESSION['nombre'];
-
 ini_set("display_error", false);
-
 include('../includes/conexion.php');
-
 if($errorConexionDB == false){
 	$cosultaClientes = consultarClientes($mysqli);	
 }
@@ -31,20 +27,23 @@ else {
 
 		<!-- start: CSS -->
 		<link href="css/smoothness/jquery-ui-1.8.23.custom.css" rel="stylesheet" />
-		<link href="css/bootstrap.min.css" rel="stylesheet" />
-		<link href="css/bootstrap-responsive.min.css" rel="stylesheet" />
+		<link href="css/bootstrap/css/bootstrap.css" rel="stylesheet" />
+		<link href="css/bootstrap-responsive.css" rel="stylesheet" />
 		<link href="css/style.min.css" rel="stylesheet" />
-		<link href="css/retina.css" rel="stylesheet" />
 		<link href="css/style-responsive.min.css" rel="stylesheet" />
+		<link href="css/retina.css" rel="stylesheet" />
 		<link type="text/css" href="css/master.css" rel="stylesheet" />
 		<!-- end: CSS -->
-		<!-- start: JavaScript Necesarios para bootstrap-->
-		<script type="text/javascript" src="js/jquery_ui/jquery-1.8.0.js"></script>
+
+		<!-- start: JavaScript-->
+		<script type="text/javascript" src="js/jquery_ui/jquery-1.8.0.min.js"></script>
 		<script type="text/javascript" src="js/jquery_ui/jquery-ui-1.8.23.custom.min.js"></script>
 		<script type="text/javascript" src="js/bootstrap/bootstrap.min.js"></script>
+
 		<script type="text/javascript" src="js/jquery-validation-1.10.0/dist/jquery.validate.min.js"></script>
 		<script type="text/javascript" src="js/jquery-validation-1.10.0/lib/jquery.metadata.js"></script>
 		<script type="text/javascript" src="js/jquery-validation-1.10.0/localization/messages_es.js"></script>
+		
 		<script type="text/javascript" src="js/Clientes.js"></script>
 		<!-- end: JavaScript-->
 		<!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -137,35 +136,31 @@ else {
 				
 				<!-- Formularios Ocultos -->
 				<div class="hide" id="agregarCliente" Title="Agregar Cliente">
-					<form action="" method="post" id="formClientes" class="formClientes">
+					<form action="includes/insertarclientes.php" method="post" id="formClientes" class="formClientes">
 						<fieldset id="ocultos">
-							<input type="hidden" id="addCli" name="accion" class="{required:true}"/>
-			    			<input type="hidden" id="id_cliente" name="id_cliente" class="{required:true}"  value="0"/>
+							<input type="hidden" id="addCli" name="accion"/>
+			    			<input type="hidden" id="id_cliente" name="id_cliente" value="0"/>
 	 					</fieldset>
 	 					<fieldset id="datosCliente">
 	 						<p>Nombre</p>
 							<span></span>
-							<input type="text" id="nombre_cli" name="nombre_cli" placeholder="Nombre Completo" class="{required:true,maxlength:120} span3"  />
+							<input type="text" id="nombre_cli" name="nombre_cli" placeholder="Nombre Completo" class="span3"  />
 							<p>Nombre de Usuario</p>
 							<span></span>
-							<input type="text" id="username" name="username" placeholder="Nombre de usuario" class="{required:true,maxlength:20} span3" />
+							<input type="text" id="username" name="username" placeholder="Nombre de usuario" class="span3" />
 							<p>Contraseña</p>
 							<span></span>
-							<input type="password" id="pass" name="pass" placeholder="Contraseña" class="{required:true,maxlength:20} span3" />
+							<input type="password" id="pass" name="pass" placeholder="Contraseña" class="span3" />
 							<p>Correo Electronico</p>
 							<span></span>
-							<input type="email" id="email" name="email" placeholder="Correo electronico" class="{required:true,maxlength:25} span3" />
+							<input type="email" id="email" name="email" placeholder="Correo electronico" class="span3" />
 							<p>Telefono</p>
 							<span></span>
-							<input type="text" id="tel" name="tel" placeholder="Telefono" class="{required:true,maxlength:30} span3"/>
+							<input type="text" id="tel" name="tel" placeholder="Telefono" class="span3"/>
 
 								<fieldset id="btnAgregar" style="text-align:center;">
 								<input type="submit" id="continuar" value="Continuar" />
-								</fieldset>
-
-								<fieldset id="ajaxLoader" class="ajaxLoader hide">
-								<img src="img/default-loader.gif">
-								<p>Espere un momento...</p>
+								
 								</fieldset>
 
 	 					</fieldset>
@@ -173,8 +168,54 @@ else {
 						
 					</form>
 					
-				</div>				
+				</div>		
 				
+				<div class="hide" id="editarCliente" Title="Agregar Cliente">
+					<form action="includes/editarclientes.php" method="post" id="formClientes" class="formClientes">
+						<fieldset id="ocultos">
+							<input type="hidden" id="addCli" name="accion"/>
+			    			<input type="hidden" id="id_cliente" name="id_cliente" value="0"/>
+	 					</fieldset>
+	 					<fieldset id="datosCliente">
+	 						<p>Nombre</p>
+							<span></span>
+							<input type="text" id="nombre_cli" name="nombre_cli" placeholder="Nombre Completo" class="span3"  />
+							<p>Nombre de Usuario</p>
+							<span></span>
+							<input type="text" id="username" name="username" placeholder="Nombre de usuario" class="span3" />
+							<p>Contraseña</p>
+							<span></span>
+							<input type="password" id="pass" name="pass" placeholder="Contraseña" class="span3" />
+							<p>Correo Electronico</p>
+							<span></span>
+							<input type="email" id="email" name="email" placeholder="Correo electronico" class="span3" />
+							<p>Telefono</p>
+							<span></span>
+							<input type="text" id="tel" name="tel" placeholder="Telefono" class="span3"/>
+
+								<fieldset id="btnAgregar" style="text-align:center;">
+								<input type="submit" id="continuar" value="Continuar" />
+								
+								</fieldset>
+
+	 					</fieldset>
+						
+						
+					</form>
+					
+				</div>	
+				
+				<div id="dialog-borrar" title="Eliminar registro" class="hide">
+				<p><span class="ui-icon ui-icon-alert" style="float: left; margin: 0 7px 20px 0;"></span>
+				Este registro se borrará de forma permanente. ¿Esta seguro?</p>
+				<form action="includes/borrarCliente.php" method="post" id="formClientes" class="formClientes">
+					<fieldset id="ocultos">
+							<input type="hidden" id="addCli" name="accion"/>
+			    			<input type="hidden" id="id_cliente" name="id_cliente" value="0"/>
+	 					</fieldset>
+	 				<input type="submit" id="continuar" value="Si" />
+	 			</form>
+			</div>			
 
 				<!-- start: Content -->
 				<div id="content" class="span10">
@@ -222,9 +263,6 @@ else {
 
 		</div><!--/.fluid-container-->
 
-		<!-- start: JavaScript Necesarios para bootstrap-->
-	
-		<!-- end: JavaScript-->
-
+		
 	</body>
 </html>

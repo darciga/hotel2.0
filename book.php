@@ -1,9 +1,12 @@
 <?php
+session_start();
 	$habi=$_POST['hab'];
 	$cin=$_POST['checkin'];
 	$cout=$_POST['checkout'];
 	$ad=$_POST['adul'];
 	$ni=$_POST['nin'];
+	$id=$_SESSION['id'];
+	echo $id;
 
 
 
@@ -116,6 +119,10 @@
 				</p>
 
 			</div>
+			<div class="span2">
+						
+						<?php echo '<a class="btn btn-primary btn-large check-availability" href="insertarreservacion.php?id='.$id.'&hab='.$habi.'">Confirmar</a>' ?>
+					</div>
 
 		</div>
 		

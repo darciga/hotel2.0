@@ -136,6 +136,8 @@ else {
 									<thead>
 										<tr>
 											<th>Habitacion</th>
+											<th>Tipo</th>
+											<th>Cliente</th>
 											<th>Fecha de entrada</th>
 											<th>Fecha de salida</th>
 											<th>Num Adultos</th>

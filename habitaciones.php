@@ -1,3 +1,25 @@
+<?php
+session_start();
+$id=$_SESSION['id'];
+if(isset($_SESSION['nombre']))
+{
+	$nombre=$_SESSION["nombre"];
+
+}
+
+ini_set("display_error", false);
+include('includes/conexion.php');
+if($errorConexionDB == false){
+	$consultaHabitaciones1 = habitaciones($mysqli,0,3);	
+	$consultaHabitaciones2 = habitaciones($mysqli,3,3);
+	$consultaHabitaciones3 = habitaciones($mysqli,6,9);
+}
+else {
+	$consultaHabitaciones = '<tr id="sinDatos">
+			<td colspan="5" class="centerTXT">ERROR AL CONECTAR CON LA BASE DE DATOS</td>
+	   	</tr>';
+}
+?>
 <!DOCTYPE html>
 <html lang="es"><head>
 	
@@ -58,7 +80,16 @@
 									<li class=""><a href="index.php">Inicio</a></li>
 									<li class="active"><a href="habitaciones.php">Habitaciones</a></li>
 									<li class=""><a href="ubicacion.php">Ubicación</a></li>
-									<li class=""><a href="login.php">Inicia Sesión</a></li>
+									<?php 
+										if(isset($nombre))
+										{
+											echo '<li class=""><a class="tooltips" href="cuenta.php">Mi cuenta<span>Bienvenido '. $nombre .'</span></a></li>';
+																					
+										}
+										else{
+											echo '<li class=""><a href="login.php">Inicia Sesión</a></li>';
+										}
+									?>	
 								</ul>
 							</div><!-- /.nav-collapse -->
 						</div>
@@ -71,89 +102,15 @@
 		<h1>Habitaciones y Suites</h1>
 		
 		<div class="row-fluid">
-			
-			<div class="span4">
-				<h3><span>Nombre</span></h3>
-				<a href="reservacion.php"><img src="css/images/rooms/prieview.jpg" alt="" /></a>
-				<br/>
-				<br/>
-				<p>Descripcion </p>
-				
-				<div class="row center">
-					<a class="btn btn-primary btn-large check-availability" href="reservacion.php">Reserva ahora</a>
-				</div>
-				
-			</div>		
-			
-			<div class="span4">
-				<h3><span>Nombre</span></h3>
-				<a href="reservacion.php"><img src="css/images/rooms/prieview.jpg" alt="" /></a>
-				<br/>
-				<br/>
-				<p> Descripción</p>
-				<div class="row center">
-					<a class="btn btn-primary btn-large check-availability" href="reservacion.php">Reserva ahora</a>
-				</div>
-			</div>	
-			
-			<div class="span4">
-				<h3><span>Nombre</span></h3>
-				<a href="reservacion.php"><img src="css/images/rooms/prieview.jpg" alt="" /></a>
-				<br/>
-				<br/>
-				<p>Descripción</p>
-				<div class="row center">
-					<a class="btn btn-primary btn-large check-availability" href="reservacion.php">Reserva ahora</a>
-				</div>
-			</div>				
-		
-		</div>				
-		
-		<div class="row-fluid">
-			<div class="span4">
-				<h3><span>Nombre</span></h3>
-				<a href="reservacion.php"><img src="css/images/rooms/prieview.jpg" alt="" /></a>
-				<br/>
-				<br/>
-				<p>  Descripción</p>
-				
-				<div class="row center">
-					<a class="btn btn-primary btn-large check-availability" href="reservacion.php">Reserva ahora</a>
-				</div>
-				
-			</div>		
-			
-			<div class="span4">
-				<h3><span>Nombre</span></h3>
-				<a href="reservacion.php"><img src="css/images/rooms/prieview.jpg" alt="" /></a>
-				<br/>
-				<br/>
-				<p>Descripción</p>
-
-				<div class="row center">
-					<a class="btn btn-primary btn-large check-availability" href="reservacion.php">Reserva ahora</a>
-				</div>
-				
-			</div>	
-			
-			<div class="span4">
-				<h3><span>Descripción </span></h3>
-				<a href="reservacion.php"><img src="css/images/rooms/prieview.jpg" alt="" /></a>
-				<br/>
-				<br/>
-				<p>Descripción.</p>
-
-				<div class="row center">
-					<a class="btn btn-primary btn-large check-availability" href="reservacion.php">Reserva ahora</a>
-				</div>
-				
-			</div>	
-			
+			<?php echo $consultaHabitaciones1;?>
 		</div>
-		
-		
-		
-		
+		<div class="row-fluid">
+			<?php  echo $consultaHabitaciones2;?>
+		</div>
+		<div class="row-fluid">
+			<?php echo $consultaHabitaciones3;?>
+		</div>
+
 	</div>
 	
 </div>
@@ -177,10 +134,6 @@
 
 	</div>
 	<div class="span4">
-		<h4>Ofertas Especiales<span class="line"></span></h4>
-		<p>Hospedate cinco noches y disfrute de una noche más totalmente <b>gratis</b>!</p>
-	</div>
-	<div class="span4">
 		<h4>Patrocinadores<span class="line"></span></h4>
 		    <ul class="thumbnails">
 				<li class="span2">
@@ -194,6 +147,20 @@
 					</div>
 				</li>								
 			</ul>
+	</div>
+	<div class="span4">
+		<?php 
+			if(isset($nombre))
+			{
+				echo '<h4>Bienvenido<span class="line"></span></h4>';
+				echo '<p>'.$nombre.'</p>';
+				echo '<a href="includes/logout.php">Salir</a>';
+			}
+			else{
+				echo '<a href="login.php"><h4>Inicia Sesión<span class="line"></span></h4></a>';
+				echo '<a href="registro.php"><h4>Crea una cuenta<span class="line"></span></h4></a>';
+			}
+		?>		
 	</div>
 	</div>
 	</div>

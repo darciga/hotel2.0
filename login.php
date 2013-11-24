@@ -1,3 +1,13 @@
+<?php 
+session_start();
+if(isset($_SESSION['id']))
+{
+	$var=$_SESSION['id'];
+}
+else{
+	$var=0;
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 	<head>
@@ -75,7 +85,7 @@
 				<br/>
 				<div class="span12">
 					<div class="span6">
-						<form class="form-horizontal" action='validar.php' method="POST">
+						<form class="form-horizontal" action='includes/valida.php' method="POST">
 							<fieldset class="well">
 								<div id="legend">
 									<legend class="">
@@ -94,7 +104,7 @@
 									<!-- Password-->
 									<label class="control-label" for="password">Contraseña</label>
 									<div class="controls">
-										<input type="password" id="password" name="contraseña" placeholder="" class="input-xlarge">
+										<input type="password" id="password" name="password" placeholder="" class="input-xlarge">
 									</div>
 								</div>
 								<div class="control-group">
@@ -111,6 +121,14 @@
 								</div>
 							</fieldset>
 						</form>
+			
+						<?php 
+						if($var==-1){
+							echo '<div class="alert alert-error">';
+  							echo '<button type="button" class="close" data-dismiss="alert">&times;</button>';
+  							echo '<h4>Error!</h4> al ingresar tus datos...</div>';
+						}
+						?>
 					</div><!--/span6-->
 					<div class="span3">
 						<h3>Inicio de Sesion</h3>

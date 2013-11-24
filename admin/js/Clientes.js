@@ -18,6 +18,8 @@ $(function(){
 		    	$('#id_cliente').val('0');
 			}
 		});
+		
+		
 
 		// Diálogo confirmación de eliminación
 		$('#dialog-borrar').dialog({
@@ -26,45 +28,7 @@ $(function(){
 			width:350,
 			height:'auto',
 			resizable: false,
-			buttons: {
-				Si: function() {
-					$.ajax({
-		            beforeSend: function(){
-		                
-		            },
-		            cache: false,
-		            type: "POST",
-		            dataType: "json",
-		            url:"hotel2.0/includes/operaciones.php",
-		            data:"accion=" + accion_ok + "&id_cliente=" + idUser_ok + "&id=" + Math.random(),
-
-		            success: function(response){
-
-		            	// Validar mensaje de error
-		            	if(response.respuesta == false){
-		            		alert(response.mensaje);
-		            	}
-		            	else{
-
-		            		// si es exitosa la operación
-		                	$('#dialog-borrar').dialog('close');
-
-		                	$('#listaClientesOk').empty();
-		                	
-		                	$('#listaClientesOk').append(response.contenido);
-
-						}
-
-		            },
-		            error:function(){
-		                alert('ERROR GENERAL DEL SISTEMA, INTENTE MAS TARDE');
-		            }
-		        });	
-				},
-				No: function() {
-					$( this ).dialog( "close" );
-				}
-			}
+			
 		});
 
 		// funcionalidad del botón que abre el formulario
@@ -75,84 +39,25 @@ $(function(){
 			// Abrimos el Formulario
 			$('#agregarCliente').dialog({
 				title:'Agregar Usuario',
-				autoOpen:true
+				autoOpen:true,
+				
 			});
 		});
-
-		// Validar Formulario
-		$('#formClientes').validate({
-		    submitHandler: function(){
-		        
-		        var str = $('#formClientes').serialize();
-
-		        alert(str);
-
-		        $.ajax({
-		            beforeSend: function(){
-		                $('#formClientes .ajaxLoader').show();
-		            },
-		            cache: false,
-		            type: "POST",
-		            dataType: "json",
-		            url:"includes/operaciones.php",
-		            data:str + "&id=" + Math.random(),
-		            success: function(response){
-
-		            	// Validar mensaje de error
-		            	if(response.respuesta == false){
-		            		alert(response.mensaje);
-		            	}
-		            	else{
-
-		            		// si es exitosa la operación
-		                	$('#agregarCliente').dialog('close');
-
-		                	// alert(response.contenido);
-		                	
-		                	if($('#sinDatos').length){
-		                		$('#sinDatos').remove();
-		                	}
-		                	
-		                	// Validad tipo de acción
-		                	if($('#accion').val() == 'editUser'){
-		                		$('#listaClientesOk').empty();
-		                	}
-
-		                	$('#listaClientesOk').append(response.contenido);
-
-						}
-
-		            	$('#formClientes .ajaxLoader').hide();
-
-		            },
-		            error:function(){
-		                alert('ERROR GENERAL DEL SISTEMA, INTENTE MAS TARDE');
-		                $('#formClientes .ajaxLoader').hide();
-		            }
-		        });
-
-		        return false;
-
-		    },
-		    errorPlacement: function(error, element) {
-		        error.appendTo(element.prev("span").append());
-		    }
-		});
-
 
 
 		// Edición de Registros
 		$('body').on('click','#listadoclientes a',function (e){
 			e.preventDefault();
 
-			// alert($(this).attr('data-accion'));
+			//alert($(this).attr('data-accion'));
 
 			// Id Usuario
 			idUser_ok = $(this).attr('href');
+			
 			accion_ok = $(this).attr('data-accion');
 
 			$('#id_user').val(idUser_ok);
-
+			
 			if( accion_ok == 'editar'){
 				// Valor de la acción
 				$('#accion').val('editCliente');
@@ -167,9 +72,13 @@ $(function(){
 				//$('#usr_status option[value='+ $(this).parent().parent().children('td:eq(3)').text() +']').attr('selected',true);
 
 				// Abrimos el Formulario
-				$('#agregarCliente').dialog({
+				$('#editarCliente').dialog({
 					title:'Editar Usuario',
-					autoOpen:true
+					autoOpen:true,
+					modal:true,
+					width:305,
+					height:'auto',
+					resizable: false,
 				});
 
 			}else if($(this).attr('data-accion') == 'eliminar'){

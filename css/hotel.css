@@ -8650,3 +8650,36 @@ div.ui-datepicker {
   width: 100%;
   min-height: 300px;
 }
+
+a.tooltips {
+  position: relative;
+  display: inline;
+}
+a.tooltips span {
+  position: absolute;
+  width:140px;
+  color: #fff;
+  background-color: rgb(184, 16, 7);
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  visibility: hidden;
+  border-radius: 2px;
+}
+a.tooltips span:after {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -30px;
+  width: 0; height: 0;
+}
+a:hover.tooltips span {
+  visibility: visible;
+  top: 30px;
+  left: 80%;
+  margin-left: -76px;
+  z-index: 999;
+  height: auto;
+  text-transform: none;
+}

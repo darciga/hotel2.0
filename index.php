@@ -1,3 +1,15 @@
+<?php 
+session_start();
+if(isset($_SESSION['nombre']))
+{
+	$nombre=$_SESSION["nombre"];
+}
+else{
+
+}
+//$nombre=$_SESSION['nombre'];
+
+?>
 <!DOCTYPE html>
 <html lang="es"><head>
 	
@@ -53,7 +65,17 @@
 									<li class="active"><a href="index.php">Inicio</a></li>
 									<li class=""><a href="habitaciones.php">Habitaciones</a></li>
 									<li class=""><a href="ubicacion.php">Ubicación</a></li>
-									<li class=""><a href="login.php">Inicia Sesión</a></li>
+									<?php 
+										if(isset($nombre))
+										{
+											echo '<li class=""><a class="tooltips" href="cuenta.php">Mi cuenta<span>Bienvenido '. $nombre .'</span></a></li>';
+																					
+										}
+										else{
+											echo '<li class=""><a href="login.php">Inicia Sesión</a></li>';
+										}
+									?>		
+									
 								</ul>
 							</div><!-- /.nav-collapse -->
 						</div>
@@ -77,6 +99,7 @@
 <div class="row-fluid home">
 	<div class="span12">
 		<h2>Comienza <span><a href="habitaciones.php">reservando tu habitación</a></span><br /></h2>
+
 	</div>
 </div>
 <hr />
@@ -120,10 +143,6 @@
 		<p class="copy">&copy; 2013 <a href="http://appsarea.com/">DJLabs</a></p>
 	</div>
 	<div class="span4">
-		<h4>Ofertas Especiales<span class="line"></span></h4>
-		<p>Hospedate cinco noches y disfrute de una noche más totalmente <b>gratis</b>!</p>
-	</div>
-	<div class="span4">
 		<h4>Patrocinadores<span class="line"></span></h4>
 		    <ul class="thumbnails">
 				<li class="span2">
@@ -137,6 +156,20 @@
 					</div>
 				</li>								
 			</ul>
+	</div>
+	<div class="span4">
+		<?php 
+			if(isset($nombre))
+			{
+				echo '<h4>Bienvenido<span class="line"></span></h4>';
+				echo '<p>'.$nombre.'</p>';
+				echo '<a href="includes/logout.php">Salir</a>';
+			}
+			else{
+				echo '<a href="login.php"><h4>Inicia Sesión<span class="line"></span></h4></a>';
+				echo '<a href="registro.php"><h4>Crea una cuenta<span class="line"></span></h4></a>';
+			}
+		?>		
 	</div>
 	</div>
 	</div>

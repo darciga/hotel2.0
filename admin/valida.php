@@ -10,9 +10,9 @@ if(mysql_num_rows($resultado))
 {
 	$array=mysql_fetch_array($resultado);
 	$_SESSION['id']=$array['id_user'];
-	$_SESSION['user']=$array['user'];
 	$_SESSION['nombre']=$array['nombre'];
 	header("Location:inicio.php");
+	
 }
 else
 {

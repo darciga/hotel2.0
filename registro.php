@@ -71,7 +71,7 @@
 			<div class="span12">
 				<div class="row">
 					<div class="span9">
-						<form class="form-horizontal well" method="post" action="validaregistro.php">
+						<form class="form-horizontal well" method="post" action="includes/validaregistro.php">
 							
 							<h1>Crea tu cuenta</br><small>y comienza a reservar tu habiación. </small></h1>
 							<br />
@@ -114,7 +114,7 @@
 
 								<div class="span3">
 									<label>Contraseña<br/>
-										<input type="password" name"pass" />
+										<input type="password" name="pass" />
 									</label>
 									
 								</div>
@@ -149,7 +149,7 @@
 								</div>
 
 								<div class="span3">
-									<label>Dirección 										<textarea class="address_box" rows="3" name="direccion"></textarea> </label>
+									<label>Dirección <textarea class="address_box" rows="3" name="direccion"></textarea> </label>
 								</div>
 
 								<div class="span3">

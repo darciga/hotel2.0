@@ -40,6 +40,19 @@ else {
 		<script type="text/javascript" src="js/jquery-validation-1.10.0/lib/jquery.metadata.js"></script>
 		<script type="text/javascript" src="js/jquery-validation-1.10.0/localization/messages_es.js"></script>
 		<script type="text/javascript" src="js/Habitaciones.js"></script>
+
+
+		<link href="css/bootstrap.min.css" rel="stylesheet" />
+		<link href="css/bootstrap-responsive.min.css" rel="stylesheet" />
+		<link href="css/style.min.css" rel="stylesheet" />
+		<link href="css/style-responsive.min.css" rel="stylesheet" />
+		<link href="css/retina.css" rel="stylesheet" />
+		<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="js/jquery-ui-1.10.3.custom.min.js"></script>
+		<script type="text/javascript" src="js/jquery-validation-1.10.0/dist/jquery.validate.min.js"></script>
+		<script type="text/javascript" src="js/jquery-validation-1.10.0/lib/jquery.metadata.js"></script>
+		<script type="text/javascript" src="js/jquery-validation-1.10.0/localization/messages_es.js"></script>
+		<script type="text/javascript" src="js/Reservaciones.js"></script>
 		<!-- end: CSS -->
 
 		<!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->

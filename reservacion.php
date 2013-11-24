@@ -1,3 +1,8 @@
+<?php 
+session_start();
+$id=$_SESSION['id'];
+echo $id;
+?>
 <!DOCTYPE html>
 <html lang="es"><head>
     <meta charset="utf-8" />
@@ -54,6 +59,7 @@
 			</div><!-- end header -->
 	<div class="row book-start">
 	<form action='book.php' method="POST">
+	
 	<div class="span12">	
 		<br /><br />
 		<h1>Reserva tu habiatación<br /><small>¿Cuándo quieres reservar con nosotros?</small></h1>
@@ -63,7 +69,7 @@
 						<h3><span>Habitación</span> seleccionada</h3>
 						<div class="room_selector">
 							<h5>Nombre de habitación</h5>
-							<img src="css/images/rooms/single_room.jpg" alt="" />
+							<img src="css/images/rooms/.jpg" alt="" />
 							<p>Descripción</p>
 							<input type="hidden" value="habitacioseleccionada" name="hab">
 						</div>						
@@ -95,6 +101,7 @@
 							<label class="control-label">Niños</label>
 							<div class="controls">
 								<select class="span1 select_kids" name="nin">
+									<option />0
 									<option />1
 									<option />2
 									<option />3
