@@ -10,8 +10,8 @@ echo $resultado;
 if(mysql_num_rows($resultado))
 {
 	$array=mysql_fetch_array($resultado);
-	$_SESSION['id']=$array['id_cliente'];
-	$_SESSION['nombre']=$array['nombres'];
+	$_SESSION['id_cli']=$array['id_cliente'];
+	$_SESSION['nombre_cli']=$array['nombres'];
 	header("Location:../index.php");
 	echo $resultado;
 }

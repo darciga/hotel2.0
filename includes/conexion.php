@@ -59,8 +59,8 @@ function consultarClientes($conexionDB){
 				<td class="center">'.$cliente['email'].'</td>
 				<td class="center">'.$cliente['tel'].'</td>
 				<td class="center">
-				<a class="btn btn-info" href="editarclientes.php?id='.$cliente['id_cliente'].'"><i class="icon-edit "> Editar</i></a>
-				<a class="btn btn-danger" href="eliminarclientes.php?id='.$cliente['id_cliente'].'"><i class="icon-trash "> Eliminar</i></a>
+				<a class="btn btn-info" href="editarclientes.php?idcli='.$cliente['id_cliente'].'"><i class="icon-edit "> Editar</i></a>
+				<a class="btn btn-danger" href="eliminarcliente.php?idcli='.$cliente['id_cliente'].'"><i class="icon-trash "> Eliminar</i></a>
 				</td>
 			</tr>
 			';
@@ -191,8 +191,8 @@ function consultarReservaciones($conexionDB){
 				<td class="centerTXT">'.$reservacion['num_niñ'].'</td>
 				<td class="centerTXT"><span class ="label '.$estado[$reservacion['estado']].'">
 				'.$reservacion['estado'].'</span> </td>
-				<td class="centerTXT"><a data-accion="editar" class="btn btn-info" href="'.$reservacion['id_reservacion'].'">
-				<i class="icon-edit "></i> </a><a data-accion="eliminar" class="btn btn-danger" href="'.$reservacion['id_reservacion'].'">
+				<td class="centerTXT"><a data-accion="editar" class="btn btn-info" href="editarReservaciones.php?idres='.$reservacion['id_reservacion'].'">
+				<i class="icon-edit "></i> </a><a data-accion="eliminar" class="btn btn-danger" href="cancelarReservaciones.php?idres='.$reservacion['id_reservacion'].'">
 				<i class="icon-trash "></i> </a></td>
 			</tr>
 			';

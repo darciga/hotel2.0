@@ -1,24 +1,21 @@
 <?php
 include ('../includes/conexion.php');
-$idcli = $_GET['idcli'];
+$idres = $_GET['idres'];
 $conectar = Conectarse();
-
-$consulta = "SELECT nombres, apellidos, user, pass, email, tel, direccion,ciudad,cp, estado, pais FROM clientes WHERE id_cliente='$idcli' LIMIT 1";
+//$consulta = "SELECT checkin,checkout,estado,num_adu,num_niñ,id_cliente,habitacion FROM reservaciones WHERE id_reservacion='idres'";
+$consulta = "SELECT * FROM reservaciones where id_reservacion='idres'";
 $resultado = mysql_query($consulta, $conectar);
+echo $resultado;
 if (mysql_num_rows($resultado)) {
 	$array = mysql_fetch_array($resultado);
 
-	$nombres = $array['nombres'];
-	$apellidos = $array['apellidos'];
-	$user = $array['user'];
-	$pass = $array['pass'];
-	$email = $array['email'];
-	$tel = $array['tel'];
-	$direccion = $array['direccion'];
-	$ciudad = $array['ciudad'];
-	$cp = $array['cp'];
+	$checkin = $array['checkin'];
+	$checkout = $array['checkout'];
 	$estado = $array['estado'];
-	$pais = $array['pais'];
+	$num_adu = $array['num_adu'];
+	$num_niñ = $array['num_niñ'];
+	$id_cliente = $array['id_cliente'];
+	$habitacion = $array['habitacion'];
 	//header("Location:../index.php");
 } else {
 	echo "Error...";
@@ -29,7 +26,7 @@ if (mysql_num_rows($resultado)) {
  <head>
  	
  	<meta charset="utf-8" />
-		<title>Editar Usuario</title>
+		<title>Editar Reservacion</title>
 		<!-- end: Meta -->
 
 		<!-- start: Mobile Specific -->
@@ -81,7 +78,7 @@ if (mysql_num_rows($resultado)) {
 								<a class="btn account dropdown-toggle" data-toggle="dropdown" href="#">
 								<div class="user">
 									<span class="hello">Editar cuenta de</span>
-									<span class="name"><?php echo $nombres; ?></span>
+									<span class="name"><?php echo $id_reservacion; ?></span>
 								</div> </a>
 							</li>
 							<!-- end: User Dropdown -->
@@ -117,19 +114,21 @@ if (mysql_num_rows($resultado)) {
 							<div class="box-content">
 								
 				<div>
-					<form action="editarcliente.php" method="post" id="formClientes" class="formClientes">
+					<form action="editarReservaciones.php" method="post" id="formClientes" class="formClientes">
 						<fieldset id="ocultos">
-							<input type="hidden" name="id" value"<?php echo $idcli; ?>"/>
+							<input type="hidden" name="idres" value"<?php echo $idres; ?>"/>
 	 					<fieldset id="datosCliente">
-	 						<p>Nombres</p>
+	 						<p>Fecha de entrada</p>
 							<span></span>
-							<input type="text" id="" name="nombres" placeholder="Nombres" class="span3" value="<?php echo $nombres; ?>"  />
-							<p>Apellidos</p>
+							<input type="text" id="" name="checkin" placeholder="Fecha de entrada" class="span3" value="<?php echo $checkin; ?>"  />
+							<p>Fecha de salida</p>
 							<span></span>
-							<input type="text" id="" name="apellidos" placeholder="Apellidos" class="span3" value="<?php echo $apellidos; ?>"  />
-							<p>Nombre de Usuario</p>
+							<input type="text" id="" name="checkout" placeholder="Fecha de salida" class="span3" value="<?php echo $checkout; ?>"  />
+							<p>Estado</p>
 							<span></span>
-							<input type="text" id="" name="user" placeholder="Nombre de usuario" class="span3" value="<?php echo $user; ?>" />
+							<select name="pais" value="" required>
+											<option value="espera" />Espera<option value="cancelado"/>Cancelado<option value="uso" />En Uso
+										</select> </label>
 							<p>Contraseña</p>
 							<span></span>
 							<input type="password" id="" name="pass" placeholder="Contraseña" class="span3" />

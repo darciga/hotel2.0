@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (isset($_SESSION['id'])) {
-	$var = $_SESSION["id"];
+	$var = $_SESSION['id'];
 } else {
 	$var = 0;
 }

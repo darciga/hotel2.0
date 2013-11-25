@@ -15,22 +15,17 @@ else {
 	<meta charset="utf-8">
 	<title>Sistema de administración</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 	<!-- Loading Bootstrap -->
 	<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
-
 	<!-- Loading Stylesheets -->    
 	<link href="css/archon.css" rel="stylesheet">
 	<link href="css/responsive.css" rel="stylesheet">
 	<link href="css/login.css" rel="stylesheet">
 	<!-- Loading Custom Stylesheets -->    
 	<link href="css/custom.css" rel="stylesheet">
-
 	<!-- Loading Custom Stylesheets -->    
 	<link href="css/custom.css" rel="stylesheet">
-
 	<link rel="shortcut icon" href="images/favicon.ico">
-
 	<!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
 	<!--[if lt IE 9]>
 	<script src="js/html5shiv.js"></script>
@@ -71,14 +66,9 @@ else {
 						if ($var==-1) {
 							echo '<div class="alert alert-error">';
   							echo '<button type="button" class="close" data-dismiss="alert">&times;</button>';
-  							echo '<h4>Error!</h4> al ingresar tus datos...</div>';
-						
-							
+  							echo '<h4>Error!</h4> al ingresar tus datos...</div>';	
 						}
-						
 						?>
-		
 	</div>
-
 </body>
 </html>

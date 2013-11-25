@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS `admins` (
 --
 
 INSERT INTO `admins` (`id_user`, `user`, `pass`, `nombre`) VALUES
-(1, 'darciga', '123456', 'Dante Omar');
+(1, 'admin', '123456', 'DAdmin');
 
 -- --------------------------------------------------------
 
@@ -129,7 +129,7 @@ CREATE TABLE IF NOT EXISTS `reservaciones` (
 --
 
 INSERT INTO `reservaciones` (`id_reservacion`, `checkin`, `checkout`, `estado`, `num_adu`, `num_niñ`, `id_cliente`, `habitacion`) VALUES
-(1, '2013-11-01', '2013-11-05', 'En espera', 1, 0, 1, 1),
+(1, '2013-11-01', '2013-11-05', 'En espera', 1, 0, 1, 1);
 
 
 -- --------------------------------------------------------
@@ -180,3 +180,5 @@ ALTER TABLE `reservaciones`
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+

@@ -1,7 +1,14 @@
 <?php
 include ('../includes/conexion.php');
 session_start();
-$usuario = $_SESSION['nombre'];
+//validmos que tenga permisos para ver la pagina
+if(isset($_SESSION['nombre_admin'])){
+	$usuario = $_SESSION['nombre_admin'];
+}
+else{
+	header("Location:sinpermisos.php");
+}
+
 $conectar = Conectarse();
 $consulta = "SELECT id_cliente FROM clientes";
 $resultado = mysql_query($consulta, $conectar);

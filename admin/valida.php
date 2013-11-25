@@ -8,8 +8,8 @@ $consulta = "SELECT id_user, nombre FROM admins WHERE user='$user' and pass='$pa
 $resultado = mysql_query($consulta, $conectar);
 if (mysql_num_rows($resultado)) {
 	$array = mysql_fetch_array($resultado);
-	$_SESSION['id'] = $array['id_user'];
-	$_SESSION['nombre'] = $array['nombre'];
+	$_SESSION['id_admin'] = $array['id_user'];
+	$_SESSION['nombre_admin'] = $array['nombre'];
 	header("Location:inicio.php");
 
 } else {

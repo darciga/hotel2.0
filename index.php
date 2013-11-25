@@ -1,7 +1,7 @@
 <?php
 session_start();
-if (isset($_SESSION['nombre'])) {
-	$nombre = $_SESSION["nombre"];
+if (isset($_SESSION['nombre_cli'])) {
+	$nombre = $_SESSION['nombre_cli'];
 }
 ?>
 <!DOCTYPE html>

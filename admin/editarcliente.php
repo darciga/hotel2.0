@@ -1,6 +1,6 @@
 <?php
 include ('../includes/conexion.php');
-$id = $_POST['id'];
+$id = $_POST['idcli'];
 $nombres = $_POST['nombres'];
 $apellidos = $_POST['apellidos'];
 $user = $_POST['user'];

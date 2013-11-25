@@ -31,6 +31,7 @@ if($resultado==1)
 {
 	echo "ya la hicimos";
 	header("Location:../index.php");
+	//header("Location:../cuentanueva.php");
 }
 else
 {

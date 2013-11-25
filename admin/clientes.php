@@ -1,6 +1,13 @@
 <?php
 session_start();
-$usuario = $_SESSION['nombre'];
+//validmos que tenga permisos para ver la pagina
+if(isset($_SESSION['nombre_admin'])){
+	$usuario = $_SESSION['nombre_admin'];
+}
+else{
+	header("Location:sinpermisos.php");
+}
+
 ini_set("display_error", false);
 include ('../includes/conexion.php');
 if ($errorConexionDB == false) {
