@@ -2,10 +2,9 @@
 include ('../includes/conexion.php');
 $idres = $_GET['idres'];
 $conectar = Conectarse();
-//$consulta = "SELECT checkin,checkout,estado,num_adu,num_niñ,id_cliente,habitacion FROM reservaciones WHERE id_reservacion='idres'";
-$consulta = "SELECT * FROM reservaciones where id_reservacion='idres'";
-$resultado = mysql_query($consulta, $conectar);
-echo $resultado;
+$consulta = "SELECT checkin,checkout,estado,num_adu,num_ni,id_cliente,habitacion FROM reservaciones WHERE id_reservacion='$idres'";
+//$consulta = "SELECT * FROM reservaciones where id_reservacion=$idres";
+$resultado = mysql_query($consulta,$conectar);
 if (mysql_num_rows($resultado)) {
 	$array = mysql_fetch_array($resultado);
 
@@ -13,7 +12,7 @@ if (mysql_num_rows($resultado)) {
 	$checkout = $array['checkout'];
 	$estado = $array['estado'];
 	$num_adu = $array['num_adu'];
-	$num_niñ = $array['num_niñ'];
+	$num_ni = $array['num_ni'];
 	$id_cliente = $array['id_cliente'];
 	$habitacion = $array['habitacion'];
 	//header("Location:../index.php");
@@ -77,8 +76,8 @@ if (mysql_num_rows($resultado)) {
 							<li class="dropdown">
 								<a class="btn account dropdown-toggle" data-toggle="dropdown" href="#">
 								<div class="user">
-									<span class="hello">Editar cuenta de</span>
-									<span class="name"><?php echo $id_reservacion; ?></span>
+									<span class="hello">Editar reservacion de</span>
+									<span class="name"><?php //echo $id_reservacion; ?></span>
 								</div> </a>
 							</li>
 							<!-- end: User Dropdown -->
@@ -127,18 +126,18 @@ if (mysql_num_rows($resultado)) {
 							<p>Estado</p>
 							<span></span>
 							<select name="pais" value="" required>
-											<option value="espera" />Espera<option value="cancelado"/>Cancelado<option value="uso" />En Uso
+											<option value="<?php echo $estado; ?>" /><?php echo $estado." (Actual)"; ?><option value="cancelado"/>Espera<option value="cancelado"/>Cancelado<option value="uso" />En Uso
 										</select> </label>
-							<p>Contraseña</p>
+							<p>Número de Adultos</p>
 							<span></span>
 							<input type="password" id="" name="pass" placeholder="Contraseña" class="span3" />
-							<p>Correo Electronico</p>
+							<p>Número de niños</p>
 							<span></span>
 							<input type="email" id="" name="email" placeholder="Correo electronico" class="span3" value="<?php echo $email; ?>" />
-							<p>Telefono</p>
+							<p>Cliente</p>
 							<span></span>
 							<input type="text" id="" name="tel" placeholder="Telefono" class="span3" value="<?php echo $tel; ?>"/>
-							<p>Dirección</p>
+							<p>Habitacion</p>
 							<span></span>
 							<input type="text" id="" name="direccion" placeholder="Direccion" class="span3" value="<?php echo $direccion; ?>"  />
 							<p>Ciudad</p>

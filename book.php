@@ -1,5 +1,11 @@
 <?php
 session_start();
+if (isset($_SESSION['nombre_cli'])) {
+	$nombre = $_SESSION['nombre_cli'];
+}
+else{
+	
+}
 $habi = $_POST['hab'];
 $cin = $_POST['checkin'];
 $cout = $_POST['checkout'];

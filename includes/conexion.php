@@ -171,7 +171,7 @@ function consultarReservaciones($conexionDB){
 	$salida = '';
 
 	$consulta = $conexionDB -> query("SELECT reservaciones.id_reservacion,reservaciones.checkin,reservaciones.checkout,
-		reservaciones.estado,reservaciones.num_adu,reservaciones.num_niñ,reservaciones.id_cliente,reservaciones.habitacion,
+		reservaciones.estado,reservaciones.num_adu,reservaciones.num_ni,reservaciones.id_cliente,reservaciones.habitacion,
 		 clientes.nombres as Cliente,habitaciones.nombre as Habitacion, tipohabitacion.nombre as nombret FROM reservaciones,clientes,habitaciones,tipohabitacion
 		 WHERE reservaciones.id_cliente=clientes.id_cliente AND reservaciones.habitacion=habitaciones.id_habitacion AND habitaciones.tipo=tipohabitacion.id_tipo ");
 
@@ -188,7 +188,7 @@ function consultarReservaciones($conexionDB){
 				<td class="centerTXT">'.$reservacion['checkin'].'</td>
 				<td class="centerTXT">'.$reservacion['checkout'].'</td>
 				<td class="centerTXT">'.$reservacion['num_adu'].'</td>
-				<td class="centerTXT">'.$reservacion['num_niñ'].'</td>
+				<td class="centerTXT">'.$reservacion['num_ni'].'</td>
 				<td class="centerTXT"><span class ="label '.$estado[$reservacion['estado']].'">
 				'.$reservacion['estado'].'</span> </td>
 				<td class="centerTXT"><a data-accion="editar" class="btn btn-info" href="editarReservaciones.php?idres='.$reservacion['id_reservacion'].'">
