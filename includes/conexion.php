@@ -4,13 +4,17 @@ define("servidor", "127.0.0.1");
 define("userdb", "root");
 define("passdb", "");
 define("bd", "sistema_reservacion");
+define("puerto","3306");
 // Variable que indica el status de la conexión a la base de datos
+
 $errorConexionDB = false;
 // Verificar constantes para conexión al servidor
-if(defined('servidor') && defined('userdb') && defined('passdb') && defined('bd'))
+if(defined('servidor') && defined('userdb') && defined('passdb') && defined('bd')&& defined('puerto'))
 {
 	// Conexión con la base de datos
 	$mysqli= new mysqli(servidor,userdb,passdb,bd);
+	//$conectado=mysqli_init();
+	//$conectado->real_connect(servidor,userdb,passdb,bd,puerto);
 
 	// Verificamos si hay error al conectar
 	if(mysqli_connect_error()){
@@ -22,20 +26,20 @@ if(defined('servidor') && defined('userdb') && defined('passdb') && defined('bd'
 	$mysqli -> query('SET NAMES "utf8"');
 }
 
-function Conectarse()
-{
-if (!($link=mysql_connect(servidor,userdb,passdb))) {
-echo "Error conectando a la base de datos.";
-exit();
+function Conectarse(){
+	if (!($link=mysql_connect(servidor,userdb,passdb))) {
+		echo "Error conectando a la base de datos.";
+		exit();
+	}
+	if (!mysql_select_db(bd,$link)){
+		echo "Error seleccionando la base de datos.";
+		exit();
+	}
+	return $link;
 }
- 
-if (!mysql_select_db(bd,$link)){
-echo "Error seleccionando la base de datos.";
-exit();
-}
-return $link;
-}
+
 $link = Conectarse();
+
 
 
 function consultarClientes($conexionDB){
@@ -54,9 +58,10 @@ function consultarClientes($conexionDB){
 				<td class="center">'.$cliente['user'].'</td>
 				<td class="center">'.$cliente['email'].'</td>
 				<td class="center">'.$cliente['tel'].'</td>
-				<td class="center"><a data-accion="editar" class="btn btn-info" href="'.$cliente['id_cliente'].'">
-				<i class="icon-edit "></i></a><a data-accion="eliminar" class="btn btn-danger" href="'.$cliente['id_cliente'].'">
-				<i class="icon-trash "></i></a></td>
+				<td class="center">
+				<a class="btn btn-info" href="editarclientes.php?id='.$cliente['id_cliente'].'"><i class="icon-edit "> Editar</i></a>
+				<a class="btn btn-danger" href="eliminarclientes.php?id='.$cliente['id_cliente'].'"><i class="icon-trash "> Eliminar</i></a>
+				</td>
 			</tr>
 			';
 		}
@@ -106,6 +111,9 @@ function habitaciones($conexionDB,$li,$ls){
 
 	return $salida;
 
+
+}
+function datoshabi(){
 
 }
 

@@ -1,16 +1,15 @@
 <?php
 session_start();
 
-$usuario=$_SESSION['nombre'];
+$usuario = $_SESSION['nombre'];
 
 ini_set("display_error", false);
 
-include('../includes/conexion.php');
+include ('../includes/conexion.php');
 
-if($errorConexionDB == false){
-	$cosultaReservacion = consultarReservaciones($mysqli);	
-}
-else {
+if ($errorConexionDB == false) {
+	$cosultaReservacion = consultarReservaciones($mysqli);
+} else {
 	$cosultaReservacion = '<tr id="sinDatos">
 			<td colspan="8" class="centerTXT">ERROR AL CONECTAR CON LA BASE DE DATOS</td>
 	   	</tr>';
@@ -73,7 +72,7 @@ else {
 								<a class="btn account dropdown-toggle" data-toggle="dropdown" href="#">
 								<div class="user">
 									<span class="hello">Bienvenido!</span>
-									<span class="name"><?php echo $usuario;?></span>
+									<span class="name"><?php echo $usuario; ?></span>
 								</div> </a>
 								<ul class="dropdown-menu">
 									<li class="dropdown-menu-title">

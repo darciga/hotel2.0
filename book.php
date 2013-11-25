@@ -1,17 +1,13 @@
 <?php
 session_start();
-	$habi=$_POST['hab'];
-	$cin=$_POST['checkin'];
-	$cout=$_POST['checkout'];
-	$ad=$_POST['adul'];
-	$ni=$_POST['nin'];
-	$id=$_SESSION['id'];
-	echo $id;
-
-
-
-
-
+$habi = $_POST['hab'];
+$cin = $_POST['checkin'];
+$cout = $_POST['checkout'];
+$ad = $_POST['adul'];
+$ni = $_POST['nin'];
+if (isset($_SESSION['id'])) {
+	$id = $_SESSION['id'];
+}
  ?>
 <!DOCTYPE html>
 <html lang="es"><head>
@@ -21,32 +17,24 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-	
-
 	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" type="text/css" />
 	<link rel="stylesheet" href="bootstrap/css/bootstrap-responsive.min.css" type="text/css" />
 	<link rel="stylesheet" href="css/hotel.css" type="text/css" />
 	<link rel="stylesheet" href="css/hotel-responsive.css" type="text/css" />
-
-		<link rel="stylesheet" href="js/slider/default.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="js/slider/default.css" type="text/css" media="screen" />
 	<link rel="stylesheet" href="css/nivo-slider.css" type="text/css" media="screen" />
 	<link rel="stylesheet" href="css/socialcount-with-icons.css" type="text/css" media="screen" />
-	
 	<style>
-		div.ui-datepicker{
-			font-size:11px;
+		div.ui-datepicker {
+			font-size: 11px;
 		}
 	</style>
-		
     <!--[if lt IE 9]>
 		<link rel="stylesheet" href="css/bootstrap_ie7.css" type="text/css">
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
-	
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
-
 <body>
-	
 		<div class="container-fluid">
 			<div class="row"><!-- start header -->
 				<div class="span5 logo">
@@ -80,27 +68,17 @@ session_start();
 					</div><!-- /navbar -->
 				</div>
 			</div><!-- end header --><div class="row booking_summary">
-	
 	<div class="span12">	
 		
 		<div class="row">
 			<div class="span6">
-
-
-
 				<form class="form-horizontal" />
 					
 					<fieldset>
-			
-
-						
 
 					</fieldset>
 				</form>
 
-
-
-				
 			</div>
 			
 			<div class="span6">
@@ -119,19 +97,20 @@ session_start();
 				</p>
 
 			</div>
-			<div class="span2">
-						
-						<?php echo '<a class="btn btn-primary btn-large check-availability" href="insertarreservacion.php?id='.$id.'&hab='.$habi.'">Confirmar</a>' ?>
-					</div>
+			<div class="span4">
+						<?php
+						if (isset($id)) {
 
-		</div>
-		
+							echo '<a class="btn btn-primary btn-large check-availability" href="insertarreservacion.php?id=' . $id . '&hab=' . $habi . '">Confirmar</a>';
 
-		
-		
-		
+						} else {
+							echo '<h3>Debes <span><a href="login.php">iniciar sesion</a></span> para poder confirmar tu reservación</h3>';
+
+						}
+						 ?>
+			</div>
+		</div>	
 	</div>
-	
 </div></div> <!-- /container -->
 
 <footer>

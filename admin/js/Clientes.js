@@ -20,8 +20,9 @@ $(function(){
 		});
 		
 		
-
+		
 		// Diálogo confirmación de eliminación
+		/*
 		$('#dialog-borrar').dialog({
 			autoOpen: false,
 			modal:true,
@@ -30,6 +31,7 @@ $(function(){
 			resizable: false,
 			
 		});
+*/
 
 		// funcionalidad del botón que abre el formulario
 		$('#goNuevoCliente').on('click',function(){
@@ -44,7 +46,7 @@ $(function(){
 			});
 		});
 
-
+		/*
 		// Edición de Registros
 		$('body').on('click','#listadoclientes a',function (e){
 			e.preventDefault();
@@ -88,4 +90,6 @@ $(function(){
 				
 
 		});
+*/
+
 });

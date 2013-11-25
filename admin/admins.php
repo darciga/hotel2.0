@@ -2,18 +2,15 @@
 
 ini_set("display_error", false);
 
-include('../includes/conexion.php');
+include ('../includes/conexion.php');
 
-if($errorConexionDB == false){
-	$consultaadmins = consultarAdmins($mysqli);	
-}
-else {
+if ($errorConexionDB == false) {
+	$consultaadmins = consultarAdmins($mysqli);
+} else {
 	$consultaadmins = '<tr id="sinDatos">
 			<td colspan="2" class="centerTXT">ERROR AL CONECTAR CON LA BASE DE DATOS</td>
 	   	</tr>';
 }
-
-
  ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -35,11 +32,10 @@ else {
 		<link href="css/style-responsive.min.css" rel="stylesheet" />
 		<link href="css/retina.css" rel="stylesheet" />
 		<link type="text/css" href="css/master.css" rel="stylesheet" />
-		
+
 		<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
 		<script type="text/javascript" src="js/jquery-ui-1.10.3.custom.min.js"></script>
-		
-		
+
 		<script type="text/javascript" src="js/jquery-validation-1.10.0/dist/jquery.validate.min.js"></script>
 		<script type="text/javascript" src="js/jquery-validation-1.10.0/lib/jquery.metadata.js"></script>
 		<script type="text/javascript" src="js/jquery-validation-1.10.0/localization/messages_es.js"></script>
@@ -146,7 +142,7 @@ else {
 									</thead>
 									<tbody id="listaUsuariosOk">
 										<?php echo $consultaadmins?>
-										
+
 									</tbody>
 								</table>
 							</div>

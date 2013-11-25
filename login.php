@@ -1,11 +1,9 @@
-<?php 
+<?php
 session_start();
-if(isset($_SESSION['id']))
-{
-	$var=$_SESSION['id'];
-}
-else{
-	$var=0;
+if (isset($_SESSION['id'])) {
+	$var = $_SESSION['id'];
+} else {
+	$var = 0;
 }
 ?>
 <!DOCTYPE html>
@@ -121,12 +119,12 @@ else{
 								</div>
 							</fieldset>
 						</form>
-			
-						<?php 
-						if($var==-1){
+
+						<?php
+						if ($var == -1) {
 							echo '<div class="alert alert-error">';
-  							echo '<button type="button" class="close" data-dismiss="alert">&times;</button>';
-  							echo '<h4>Error!</h4> al ingresar tus datos...</div>';
+							echo '<button type="button" class="close" data-dismiss="alert">&times;</button>';
+							echo '<h4>Error!</h4> al ingresar tus datos...</div>';
 						}
 						?>
 					</div><!--/span6-->

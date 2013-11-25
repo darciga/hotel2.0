@@ -1,15 +1,14 @@
 <?php
 session_start();
 
-$usuario=$_SESSION['nombre'];
+$usuario = $_SESSION['nombre'];
 ini_set("display_error", false);
 
-include('../includes/conexion.php');
+include ('../includes/conexion.php');
 
-if($errorConexionDB == false){
-	$cosultaHabitacion = consultarHabitaciones($mysqli);	
-}
-else {
+if ($errorConexionDB == false) {
+	$cosultaHabitacion = consultarHabitaciones($mysqli);
+} else {
 	$cosultaHabitacion = '<tr id="sinDatos">
 			<td colspan="5" class="centerTXT">ERROR AL CONECTAR CON LA BASE DE DATOS</td>
 	   	</tr>';
@@ -36,17 +35,8 @@ else {
 		<link href="css/retina.css" rel="stylesheet" />
 		<link type="text/css" href="css/master.css" rel="stylesheet" />
 		
-		<script type="text/javascript" src="js/jquery-validation-1.10.0/dist/jquery.validate.min.js"></script>
-		<script type="text/javascript" src="js/jquery-validation-1.10.0/lib/jquery.metadata.js"></script>
-		<script type="text/javascript" src="js/jquery-validation-1.10.0/localization/messages_es.js"></script>
-		<script type="text/javascript" src="js/Habitaciones.js"></script>
 
 
-		<link href="css/bootstrap.min.css" rel="stylesheet" />
-		<link href="css/bootstrap-responsive.min.css" rel="stylesheet" />
-		<link href="css/style.min.css" rel="stylesheet" />
-		<link href="css/style-responsive.min.css" rel="stylesheet" />
-		<link href="css/retina.css" rel="stylesheet" />
 		<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
 		<script type="text/javascript" src="js/jquery-ui-1.10.3.custom.min.js"></script>
 		<script type="text/javascript" src="js/jquery-validation-1.10.0/dist/jquery.validate.min.js"></script>
@@ -86,7 +76,7 @@ else {
 								<a class="btn account dropdown-toggle" data-toggle="dropdown" href="#">
 								<div class="user">
 									<span class="hello">Bienvenido!</span>
-									<span class="name"><?php echo $usuario;?></span>
+									<span class="name"><?php echo $usuario; ?></span>
 								</div> </a>
 								<ul class="dropdown-menu">
 									<li class="dropdown-menu-title">

@@ -1,17 +1,17 @@
 <?php
-include('../includes/conexion.php');
+include ('../includes/conexion.php');
 session_start();
-$usuario=$_SESSION['nombre'];
-$conectar=Conectarse();
-$consulta="SELECT id_cliente FROM clientes";
-$resultado=mysql_query($consulta,$conectar);
+$usuario = $_SESSION['nombre'];
+$conectar = Conectarse();
+$consulta = "SELECT id_cliente FROM clientes";
+$resultado = mysql_query($consulta, $conectar);
 $numero_clientes = mysql_num_rows($resultado);
 $sql = "SELECT id_reservacion FROM reservaciones";
-$resultado=mysql_query($sql,$conectar);
-$num_re=mysql_num_rows($resultado);
+$resultado = mysql_query($sql, $conectar);
+$num_re = mysql_num_rows($resultado);
 $sql = "SELECT * FROM habitaciones WHERE estado like 'desocupada%'";
-$resultado=mysql_query($sql,$conectar);
-$num_hab=mysql_num_rows($resultado);
+$resultado = mysql_query($sql, $conectar);
+$num_hab = mysql_num_rows($resultado);
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -71,7 +71,7 @@ $num_hab=mysql_num_rows($resultado);
 								<a class="btn account dropdown-toggle" data-toggle="dropdown" href="#">
 								<div class="user">
 									<span class="hello">Bienvenido!</span>
-									<span class="name"><?php echo $usuario;?></span>
+									<span class="name"><?php echo $usuario; ?></span>
 								</div> </a>
 								<ul class="dropdown-menu">
 									<li class="dropdown-menu-title">
