@@ -11,8 +11,6 @@ else{
 
 ini_set("display_error", false);
 
-include ('../includes/conexion.php');
-
 if ($errorConexionDB == false) {
 	$consultaadmins = consultarAdmins($mysqli);
 } else {

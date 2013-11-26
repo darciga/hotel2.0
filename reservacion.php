@@ -1,9 +1,23 @@
 <?php
 session_start();
+include ('includes/conexion.php');
 //$id=$_SESSION['id'];
 //echo $id;
 //variable de paso por url
 $hab = $_GET['hab'];
+$conectar = Conectarse();
+$consulta = "SELECT nombre,descripcion,imagen FROM habitaciones WHERE id_habitacion='$hab'";
+$resultado = mysql_query($consulta, $conectar);
+if (mysql_num_rows($resultado)) {
+	//header("Location:clientes.php");
+	$array = mysql_fetch_array($resultado);
+	$nh = $array['nombre'];
+	$dh = $array['descripcion'];
+	$ih = $array['imagen'];
+} else {
+	echo "No se borro";
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -81,10 +95,10 @@ $hab = $_GET['hab'];
 							<div class="span4">
 								<h3><span>Habitación</span> seleccionada</h3>
 								<div class="room_selector">
-									<h5>Nombre de habitación</h5>
-									<img src="css/images/rooms/.jpg" alt="" />
+									<h5><?php echo $nh; ?></h5>
+									<img src="css/images/rooms/<?php echo $ih; ?>.jpg" alt="" />
 									<p>
-										Descripción
+										<?php echo $dh; ?>
 									</p>
 									<input type="hidden" value="<?php echo $hab; ?>" name="hab">
 								</div>

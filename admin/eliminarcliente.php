@@ -1,6 +1,6 @@
 <?php
 include ('../includes/conexion.php');
-$id = $_GET['id'];
+$id = $_GET['idcli'];
 echo $id . "<br>";
 $conectar = Conectarse();
 $consulta = "DELETE FROM clientes WHERE id_cliente='$id' LIMIT 1";

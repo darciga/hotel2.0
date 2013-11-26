@@ -146,7 +146,7 @@ function consultarHabitaciones($conexionDB){
 				<td class="centerTXT">'.$habitacion['descripcion'].'</td>
 				<td class="centerTXT"><span class ="label '.$estado[$habitacion['estado']].'">'
 				.$habitacion['estado'].'</span> </td>
-				<td class="centerTXT"><a data-accion="editar" class="btn btn-info" href="'.$habitacion['id_habitacion'].'">
+				<td class="centerTXT"><a data-accion="editar" class="btn btn-info" href=editarHabitaciones.php?idhab='.$habitacion['id_habitacion'].'>
 				<i class="icon-edit "></i> </a><a data-accion="eliminar" class="btn btn-danger" href="'.$habitacion['id_habitacion'].'">
 				<i class="icon-trash "></i> </a></td>
 			</tr>
@@ -166,7 +166,7 @@ function consultarHabitaciones($conexionDB){
 function consultarReservaciones($conexionDB){
 	$estado = array("En espera" => "label-success",
 						"Tomada" => "label-warning",
-						"Cancela" => "label-important");
+						"Cancelada" => "label-important");
 
 	$salida = '';
 

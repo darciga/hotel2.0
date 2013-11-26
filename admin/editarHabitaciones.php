@@ -1,33 +1,22 @@
+
 <?php
 include ('../includes/conexion.php');
-$idres = $_GET['idres'];
+$idhab = $_GET['idhab'];
 $conectar = Conectarse();
-$consulta = "SELECT reservaciones.id_reservacion,reservaciones.checkin,reservaciones.checkout,
-		reservaciones.estado,reservaciones.num_adu,reservaciones.num_ni,reservaciones.id_cliente,reservaciones.habitacion,
-		 clientes.nombres as Cliente,habitaciones.nombre as Habitacion, tipohabitacion.nombre as nombret,
-		 habitaciones.id_habitacion as IH FROM reservaciones,clientes,habitaciones,tipohabitacion
-		 WHERE reservaciones.id_cliente=clientes.id_cliente
-		 AND reservaciones.habitacion=habitaciones.id_habitacion
-		 AND habitaciones.tipo=tipohabitacion.id_tipo ";
-//$consulta = "SELECT * FROM reservaciones where id_reservacion=$idres";
-$resultado = mysql_query($consulta,$conectar);
+
+$consulta = "SELECT nombre, tipo, estado,descripcion, imagen FROM habitaciones WHERE id_habitacion=$idhab";
+$resultado = mysql_query($consulta, $conectar);
 if (mysql_num_rows($resultado)) {
 	$array = mysql_fetch_array($resultado);
 
-	$checkin = $array['checkin'];
-	$checkout = $array['checkout'];
+	$nombre = $array['nombre'];
+	$tipo = $array['tipo'];
 	$estado = $array['estado'];
-	$num_adu = $array['num_adu'];
-	$num_ni = $array['num_ni'];
-	$id_cliente = $array['id_cliente'];
-	$habitacion = $array['habitacion'];
-	$cliente= $array['Cliente'];
-	$Habitacion=$array['Habitacion'];
-	$IH=$array['IH'];
+	$descripcion = $array['descripcion'];
+	$imagen = $array['imagen'];
 	//header("Location:../index.php");
 } else {
 	echo "Error...";
-	echo $resultado;
 }
  ?>
  <!doctype html>
@@ -35,7 +24,7 @@ if (mysql_num_rows($resultado)) {
  <head>
  	
  	<meta charset="utf-8" />
-		<title>Editar Reservacion</title>
+		<title>Editar Usuario</title>
 		<!-- end: Meta -->
 
 		<!-- start: Mobile Specific -->
@@ -86,8 +75,8 @@ if (mysql_num_rows($resultado)) {
 							<li class="dropdown">
 								<a class="btn account dropdown-toggle" data-toggle="dropdown" href="#">
 								<div class="user">
-									<span class="hello">Editar reservacion de</span>
-									<span class="name"><?php //echo $id_reservacion; ?></span>
+									<span class="hello">Editar cuenta de</span>
+									<span class="name"><?php echo $nombre; ?></span>
 								</div> </a>
 							</li>
 							<!-- end: User Dropdown -->
@@ -123,35 +112,29 @@ if (mysql_num_rows($resultado)) {
 							<div class="box-content">
 								
 				<div>
-					<form action="editarReservacion.php?idres=<?php echo $idres;?>&IH=<?php echo $IH; ?>" method="post" id="formClientes" class="formClientes">
+					<form action="editarhabitacion.php?idhab=<?php echo $idhab; ?>" method="post" id="formClientes" class="formClientes">
 						<fieldset id="ocultos">
-							<input type="hidden" name="idres" value"<?php echo $idres; ?>"/>
-	 					<fieldset id="datosCliente">
-	 						<p>Fecha de entrada</p>
+							<input type="hidden" name="idhab" value"<?php echo $idhab; ?>"/>
+	 					<fieldset id="datosHabitacion">
+	 						<p>Nombre</p>
 							<span></span>
-							<input type="text" id="" name="checkin" placeholder="Fecha de entrada" class="span3" value="<?php echo $checkin; ?>"  />
-							<p>Fecha de salida</p>
+							<input type="text" id="" name="nombre" placeholder="Nombre" class="span3" value="<?php echo $nombre; ?>"  />
+							<p>Tipo</p>
 							<span></span>
-							<input type="text" id="" name="checkout" placeholder="Fecha de salida" class="span3" value="<?php echo $checkout; ?>"  />
+							<input type="text" id="" name="tipo" placeholder="Tipo" class="span3" value="<?php echo $tipo; ?>"  />
 							<p>Estado</p>
 							<span></span>
 							<select name="estado" value="" required>
-											<option value="<?php echo $estado; ?>" /><?php echo $estado." (Actual)"; ?><option value="En espera"/>Espera<option value="Cancelada"/>Cancelada<option value="Tomada" />En Uso
+											<option value="<?php echo $estado; ?>" /><?php echo $estado." (Actual)"; ?><option value="Desocupada"/>Desocupada<option value="Ocupada"/>Ocupada<option value="Mantenimiento"/>Mantenimiento
 										</select> </label>
-							<p>Número de Adultos</p>
+							<p>Descripcion</p>
 							<span></span>
-							<input type="text" id="" name="num_adu" placeholder="Numero de Adultos" class="span3" value="<?php echo $num_adu; ?>"  />
-							<p>Número de niños</p>
+							<input type="text" id="" name="descripcion" placeholder="Descripcion" class="span3" value="<?php echo $descripcion?>"/>
+							<p>Imagen</p>
 							<span></span>
-							<input type="text" id="" name="num_ni" placeholder="Numero de Niños" class="span3" value="<?php echo $num_ni; ?>" />
-							<p>Cliente</p>
-							<span></span>
-							<input type="text" id="" name="id_cliente" placeholder="Cliente" class="span3" value="<?php echo $cliente; ?>"/>
-							<p>Habitacion</p>
-							<span></span>
-							<input type="text" id="" name="habitacion" placeholder="Habitacion" class="span3" value="<?php echo $Habitacion; ?>"  />
+							<input type="text" id="" name="imagen" placeholder="Imagen" class="span3" value="<?php echo $imagen; ?>" />
 								<fieldset id="btnAgregar" style="text-align:center;">
-								<input type="submit" id="continuar" value="Continuar" />
+								<input type="submit" id="continuar" value="Modificar" />
 								</fieldset>
 	 					</fieldset>
 					</form>
