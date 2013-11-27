@@ -43,7 +43,7 @@ if ($errorConexionDB == false) {
 		<script type="text/javascript" src="js/jquery-validation-1.10.0/dist/jquery.validate.min.js"></script>
 		<script type="text/javascript" src="js/jquery-validation-1.10.0/lib/jquery.metadata.js"></script>
 		<script type="text/javascript" src="js/jquery-validation-1.10.0/localization/messages_es.js"></script>
-		<script type="text/javascript" src="js/Reservaciones.js"></script>
+		<link type="text/css" href="css/master.css" rel="stylesheet" />
 		<!-- end: CSS -->
 
 		<!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -133,8 +133,11 @@ if ($errorConexionDB == false) {
 						<div class="box span12">
 							<div class="box-header" data-original-title="">
 								<h2><i class="icon-user"></i><span class="break"></span>Reservaciones</h2>
-
+								
 							</div>
+							<div id="" class="center addUser">
+		    					<a id="" class="btn btn-small btn-info" href="reservacionesadd.php"><i class="icon-plus"></i> Agregar Reservación</a>
+		    				</div>
 							<div class="box-content">
 								<table class="table table-striped table-bordered bootstrap-datatable datatable">
 									<thead>

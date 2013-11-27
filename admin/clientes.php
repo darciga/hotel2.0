@@ -187,26 +187,18 @@ if ($errorConexionDB == false) {
 							<p>Pais</p>
 							<span></span>
 							<input type="text" id="nombre_cli" name="pais" placeholder="Pais" class="span3"  />
-
-
 								<fieldset id="btnAgregar" style="text-align:center;">
-								<input type="submit" id="continuar" value="Continuar" />
-								
+								<input type="submit" id="continuar" value="Continuar" />							
 								</fieldset>
-
 	 					</fieldset>
-						
-						
 					</form>
-					
 				</div>				
 				<!-- start: Content -->
 				<div id="content" class="span10">
 					<div class="row-fluid">
 						<div class="box span12">
 							<div class="box-header">
-								<h2><i class="icon-user"></i><span class="break"></span>Clientes</h2>
-
+							<h2><i class="icon-user"></i><span class="break"></span>Clientes</h2>
 							</div>
 							<div id="btnAddCliente" class="center addUser">
 		    					<button id="goNuevoCliente" class="btn btn-small btn-info"><i class="icon-plus"></i> Agregar Cliente</button>
