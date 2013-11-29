@@ -1,8 +1,7 @@
 <?php
 include ('../includes/conexion.php');
-//$idcli = $_GET['idcli'];
 $conectar = Conectarse();
-
+$idcli = $_GET['idcli'];
 //$consulta = "SELECT nombres, apellidos, user, pass, email, tel, direccion,ciudad,cp, estado, pais FROM clientes WHERE id_cliente='$idcli' LIMIT 1";
 //$resultado = mysql_query($consulta, $conectar);
 /*
@@ -28,7 +27,6 @@ if (mysql_num_rows($resultado)) {
 */
 //consulta para sacar los clientes y ponerlos en el selected
 //mysql_free_result($combo);
-
  ?>
  <!doctype html>
  <html lang="es">
@@ -106,7 +104,7 @@ if (mysql_num_rows($resultado)) {
 					<div class="nav-collapse sidebar-nav">
 						<ul class="nav nav-tabs nav-stacked main-menu">
 							<li>
-								<a href="reservaciones.php"><span class="hidden-tablet">Regresar</span></a>
+								<a href="inicio.php"><span class="hidden-tablet">Regresar</span></a>
 							</li>
 
 						</ul>
@@ -130,54 +128,86 @@ if (mysql_num_rows($resultado)) {
 	 					<fieldset id="datosCliente">
 	 						<p>Cliente</p>
 	 						<span></span>
-										<select name="id_cli" value="" class="span5" required>
-											<option value="null" />
-											<!-- lleno el option con php -->
-											<?php
-												$consulta = "SELECT CONCAT( nombres,' ',apellidos ) as nombrec, id_cliente as id_cli  FROM clientes";
-												$resultado = mysql_query($consulta,$conectar);
-												while($combo = mysql_fetch_array($resultado))
-											{
-												
-												printf("<option value='&nbsp;%s' />&nbsp;%s",$combo["id_cli"],$combo["nombrec"]);
-											}
-											 ?>
-							
-										</select>
+							<label><?php 
+							$consulta = " SELECT CONCAT( nombres,' ',apellidos ) as nombrec, id_cliente FROM clientes WHERE id_cliente='$idcli'";
+							$res= mysql_query($consulta,$conectar);
+							while ($nombre = mysql_fetch_array($res)) {
+										# code...
+								printf("%s",$nombre['nombrec']);
+								$idcli2=$nombre['id_cliente'];
+							}
+
+
+							 ?></label>
 							
 							<p>Tipo</p>
 							<span></span>
-							<select name="id_hab" value="" class="span5" required>
-											<option value="null" />
-											<!-- lleno el option con php -->
-											<?php
-												$consulta = "SELECT id_tipo,nombre FROM tipohabitacion";
+							<?php 
+								if($_POST)
+								{
+									$consulta = "SELECT ";
+									echo "Ya se envio la variable";
+									$tipo=$_POST['id_hab'];
+									$tipohabitacion;
+									echo $tipo;
+								}
+								else{
+									echo '<select name="id_hab" value="" class="span5" required><option value="null" />';
+									$consulta = "SELECT id_tipo,nombre FROM tipohabitacion";
 												$resultado = mysql_query($consulta,$conectar);
 												while($combot = mysql_fetch_array($resultado))
 											{
-												
+
 												printf("<option value='%s' />&nbsp;%s",$combot["id_tipo"],$combot["nombre"]);
 											}
+									
+									
+											
+								}
+							 ?>
+							
+											<!-- lleno el option con php -->
+											<?php
+												
 											 ?>
 							
 										</select></br>
-							<input type="submit" id="" onclick="this.form.action='reservacionesadd.php'" value="Seleccionar" class="btn btn-info" />
-	 						<p>Habitacion</p>
+							<input type="submit" id="" onclick="this.form.action='reservacionesadd.php?idcli='$idcli' '" value="Seleccionar" class="btn btn-info" />
+	 						<?php 
+	 						if($_POST)
+	 						{
+	 							echo '<p>Habitacion</p>
 							<span></span>
 							<select name="id_hab" value="" class="span5" required>
-											<option value="null" />
-											<!-- lleno el option con php -->
-											<?php
-												$consulta = "SELECT nombre,estado,id_habitacion FROM habitaciones WHERE estado='Desocupada'";
-												$resultado = mysql_query($consulta,$conectar);
+											<option value="null" />';
+											$consulta = "SELECT nombre,estado,id_habitacion FROM habitaciones WHERE estado='Desocupada'";
+											$query= "SELECT tipohabitacion.id_tipo, tipohabitacion.nombre, tipohabitacion.precio, habitaciones.id_habitacion, habitaciones.tipo, habitaciones.estado
+														FROM tipohabitacion, habitaciones
+														WHERE tipohabitacion.id_tipo ='$tipo'
+														AND habitaciones.tipo ='$tipo'
+														AND habitaciones.estado = 'Desocupada'";
+												$resultado = mysql_query($query,$conectar);
 												while($combo = mysql_fetch_array($resultado))
 											{
 												
 												printf("<option value='%s' />&nbsp;%s",$combo["id_habitacion"],$combo["nombre"]);
+												$idh=$combo['id_habitacion'];
+												echo $idh;
 											}
-											 ?>
+											
+											echo '</select> ';
+	 						}
+	 						else{
+	 							
+							echo '<p>Tienes que seleccionar el tipo de habitacion</p><span></span>';
+
+	 						}
+	 						 ?>
+	 						
+											<!-- lleno el option con php -->
+					
 							
-										</select> 
+										
 
 							<p>Num. de adultos</p>
 							<span></span>

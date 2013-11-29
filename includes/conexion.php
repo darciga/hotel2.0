@@ -59,8 +59,45 @@ function consultarClientes($conexionDB){
 				<td class="center">'.$cliente['email'].'</td>
 				<td class="center">'.$cliente['tel'].'</td>
 				<td class="center">
-				<a class="btn btn-info" href="editarclientes.php?idcli='.$cliente['id_cliente'].'"><i class="icon-edit "> Editar</i></a>
-				<a class="btn btn-danger" href="eliminarcliente.php?idcli='.$cliente['id_cliente'].'"><i class="icon-trash "> Eliminar</i></a>
+				<a class="btn btn-warning" href="reservacionesadd.php?idcli='.$cliente['id_cliente'].'"><i class="icon-plus"></i></a>
+				<a class="btn btn-info" href="editarclientes.php?idcli='.$cliente['id_cliente'].'"><i class="icon-edit "></i></a>
+				<a class="btn btn-danger" href="eliminarcliente.php?idcli='.$cliente['id_cliente'].'"><i class="icon-trash "></i></a>
+				</td>
+			</tr>
+			';
+		}
+	}
+	else{
+		$salida = '<tr id="sinDatos">
+				<td colspan="4" class="center">NO HAY REGISTROS EN LA BASE DE DATOS</td>
+	   		</tr>';
+	}
+
+	return $salida;
+
+
+}
+
+function buscarClientes($conexionDB,$nombre){
+	$salida = '';
+
+	$consulta = $conexionDB -> query("SELECT id_cliente, nombres,user,email,tel FROM clientes WHERE nombres LIKE '%$nombre%' ");
+
+
+	if($consulta -> num_rows != 0){
+		//convertir el objeto
+		while ($cliente = $consulta -> fetch_assoc()) {
+			# code...
+			$salida .= '
+			<tr>
+				<td class="center">'.$cliente['nombres'].'</td>
+				<td class="center">'.$cliente['user'].'</td>
+				<td class="center">'.$cliente['email'].'</td>
+				<td class="center">'.$cliente['tel'].'</td>
+				<td class="center">
+				<a class="btn btn-warning" href="reservacionesadd.php?idcli='.$cliente['id_cliente'].'"><i class="icon-plus"></i></a>
+				<a class="btn btn-info" href="editarclientes.php?idcli='.$cliente['id_cliente'].'"><i class="icon-edit "></i></a>
+				<a class="btn btn-danger" href="eliminarcliente.php?idcli='.$cliente['id_cliente'].'"><i class="icon-trash "></i></a>
 				</td>
 			</tr>
 			';

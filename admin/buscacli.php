@@ -1,6 +1,7 @@
 <?php
 session_start();
 //validmos que tenga permisos para ver la pagina
+$Nombre=$_POST['cliente'];
 if(isset($_SESSION['nombre_admin'])){
 	$usuario = $_SESSION['nombre_admin'];
 }
@@ -11,12 +12,18 @@ else{
 ini_set("display_error", false);
 include ('../includes/conexion.php');
 if ($errorConexionDB == false) {
-	$cosultaClientes = consultarClientes($mysqli);
+	$buscarClientes = buscarClientes($mysqli,$Nombre);
 } else {
 	$cosultaClientes = '<tr id="sinDatos">
 			<td colspan="5" class="centerTXT">ERROR AL CONECTAR CON LA BASE DE DATOS</td>
 	   	</tr>';
 }
+
+//$link=Conectarse();
+
+//$query="select * from clientes where nombres like '%$Nombre%'";
+//$result=mysql_query($query);
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -126,90 +133,22 @@ if ($errorConexionDB == false) {
 					<div class="nav-collapse sidebar-nav">
 						<ul class="nav nav-tabs nav-stacked main-menu">
 							<li>
-								<a href="inicio.php"><span class="hidden-tablet">Inicio</span></a>
-							</li>
-							<li>
-								<a href="clientes.php"><span class="hidden-tablet">Clientes</span></a>
-							</li>
-							<li>
-								<a href="reservaciones.php"><span class="hidden-tablet"> Reservaciones</span></a>
-							</li>
-							<li>
-								<a href="habitaciones.php"><span class="hidden-tablet"> Habitaciones</span></a>
-							</li>
-							<li>
-								<a href="admins.php"><span class="hidden-tablet"> Usuarios del sistema</span></a>
+								<a href="clientes.php"><span class="hidden-tablet">Regresar</span></a>
 							</li>
 
 						</ul>
 					</div>
 				</div>
 				<!-- end: Main Menu -->
-				
-				<!-- Formularios Ocultos -->
-				<div class="hide" id="agregarCliente" Title="Agregar Cliente">
-					<form action="../includes/insertarclientes.php" method="post" id="formClientes" class="formClientes">
-						<fieldset id="ocultos">
-							<input type="hidden" id="addCli" name="accion"/>
-			    			<input type="hidden" id="id_cliente" name="id_cliente" value="0"/>
-	 					</fieldset>
-	 					<fieldset id="datosCliente">
-	 						<p>Nombres</p>
-							<span></span>
-							<input type="text" id="" name="nombres" placeholder="Nombres" class="span3"  />
-							<p>Apellidos</p>
-							<span></span>
-							<input type="text" id="" name="apellidos" placeholder="Apellidos" class="span3"  />
-							<p>Nombre de Usuario</p>
-							<span></span>
-							<input type="text" id="" name="user" placeholder="Nombre de usuario" class="span3" />
-							<p>Contraseña</p>
-							<span></span>
-							<input type="password" id="" name="pass" placeholder="Contraseña" class="span3" />
-							<p>Correo Electronico</p>
-							<span></span>
-							<input type="email" id="" name="email" placeholder="Correo electronico" class="span3" />
-							<p>Telefono</p>
-							<span></span>
-							<input type="text" id="" name="tel" placeholder="Telefono" class="span3"/>
-							<p>Dirección</p>
-							<span></span>
-							<input type="text" id="" name="direccion" placeholder="Direccion" class="span3"  />
-							<p>Ciudad</p>
-							<span></span>
-							<input type="text" id="" name="ciudad" placeholder="Ciudad" class="span3"  />
-							<p>Codigo postal</p>
-							<span></span>
-							<input type="text" id="" name="cp" placeholder="Codigo postal" class="span3"  />
-							<p>Estado</p>
-							<span></span>
-							<input type="text" id="nombre_cli" name="estado" placeholder="Estado" class="span3"  />
-							<p>Pais</p>
-							<span></span>
-							<input type="text" id="nombre_cli" name="pais" placeholder="Pais" class="span3"  />
-								<fieldset id="btnAgregar" style="text-align:center;">
-								<input type="submit" id="continuar" value="Continuar" />							
-								</fieldset>
-	 					</fieldset>
-					</form>
-				</div>				
+						
 				<!-- start: Content -->
 				<div id="content" class="span10">
 					<div class="row-fluid">
-						<div class="box span12">
+						<div class="box span8">
 							<div class="box-header">
-							<h2><i class="icon-user"></i><span class="break"></span>Clientes</h2>
+							<h2><i class="icon-user"></i><span class="break"></span>Resultado de busqueda</h2>
 							</div>
-							<div id="btnAddCliente" class="center addUser">
-		    					<button id="goNuevoCliente" class="btn btn-small btn-info"><i class="icon-plus"></i> Agregar Cliente</button>
-		    				</div>
-		    				<div class="pull-right">
-		    					<form class="form-search" action="buscacli.php" method="POST">
-  									<input type="text" class="input-medium search-query" name="cliente">
-  										<button type="submit" class="btn">Buscar</button>
-								</form>		    					
-		    				</div>
-		    				
+							
 							<div class="box-content">
 								<table id="listadoclientes" class="table table-striped table-bordered bootstrap-datatable datatable">
 									<thead>
@@ -222,12 +161,42 @@ if ($errorConexionDB == false) {
 										</tr>
 									</thead>
 									<tbody id="listaClientesOk">
-										<?php echo $cosultaClientes?>
+										<!-- consulta de la busqueda -->
+										<?php
+										echo $buscarClientes;
+										?>
 										
 									</tbody>
 								</table>
 							</div>
 						</div><!--/span-->
+						<div class="box span4">
+							<div class="box-header">
+							<h2><i class="icon-user"></i><span class="break"></span>Resultado de busqueda</h2>
+							</div>
+							
+							<div class="box-content">
+								<table id="listadoclientes" class="table table-striped table-bordered bootstrap-datatable datatable">
+									<thead>
+										<tr>
+											<th>Nombre</th>
+											<th>Usuario</th>
+											<th>Correo</th>
+											<th>Telefono</th>
+											<th>Acciones</th>
+										</tr>
+									</thead>
+									<tbody id="listaClientesOk">
+										<!-- consulta de la busqueda -->
+										<?php
+										//echo $buscarClientes;
+										?>
+										
+									</tbody>
+								</table>
+							</div>
+						</div><!--/span-->
+
 
 					</div><!--/row-->
 
