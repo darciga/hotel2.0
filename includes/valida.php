@@ -18,6 +18,6 @@ if(mysql_num_rows($resultado))
 else
 {
 	header("Location:../login.php");
-	$_SESSION[id]=-1;
+	$_SESSION['id']=-1;
 }
 ?>

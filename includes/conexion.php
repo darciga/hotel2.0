@@ -229,8 +229,7 @@ function consultarReservaciones($conexionDB){
 				<td class="centerTXT"><span class ="label '.$estado[$reservacion['estado']].'">
 				'.$reservacion['estado'].'</span> </td>
 				<td class="centerTXT"><a data-accion="editar" class="btn btn-info" href="editarReservaciones.php?idres='.$reservacion['id_reservacion'].'">
-				<i class="icon-edit "></i> </a><a data-accion="eliminar" class="btn btn-danger" href="cancelarReservaciones.php?idres='.$reservacion['id_reservacion'].'">
-				<i class="icon-trash "></i> </a></td>
+				<i class="icon-edit "></i> </a></td>
 			</tr>
 			';
 		}

@@ -106,66 +106,79 @@ if (mysql_num_rows($resultado)) {
 						</ul>
 					</div>
 				</div>
-				<div id="content" class="span10">
+				<div id="content">
 					<div class="row-fluid">
-						<div class="box span12">
+						<div class="box span8">
 							<div class="box-header">
 								<h2><i class="icon-user"></i><span class="break"></span>Edicion</h2>
-
 							</div>
 							
 							<div class="box-content">
-								
-				<div>
-					<form action="editarcliente.php" method="post" id="formClientes" class="formClientes">
-						<fieldset id="ocultos">
-							<input type="hidden" name="id" value"<?php echo $idcli; ?>"/>
-	 					<fieldset id="datosCliente">
-	 						<p>Nombres</p>
-							<span></span>
-							<input type="text" id="" name="nombres" placeholder="Nombres" class="span3" value="<?php echo $nombres; ?>"  />
-							<p>Apellidos</p>
-							<span></span>
-							<input type="text" id="" name="apellidos" placeholder="Apellidos" class="span3" value="<?php echo $apellidos; ?>"  />
-							<p>Nombre de Usuario</p>
-							<span></span>
-							<input type="text" id="" name="user" placeholder="Nombre de usuario" class="span3" value="<?php echo $user; ?>" />
-							<p>Contraseña</p>
-							<span></span>
-							<input type="password" id="" name="pass" placeholder="Contraseña" class="span3" />
-							<p>Correo Electronico</p>
-							<span></span>
-							<input type="email" id="" name="email" placeholder="Correo electronico" class="span3" value="<?php echo $email; ?>" />
-							<p>Telefono</p>
-							<span></span>
-							<input type="text" id="" name="tel" placeholder="Telefono" class="span3" value="<?php echo $tel; ?>"/>
-							<p>Dirección</p>
-							<span></span>
-							<input type="text" id="" name="direccion" placeholder="Direccion" class="span3" value="<?php echo $direccion; ?>"  />
-							<p>Ciudad</p>
-							<span></span>
-							<input type="text" id="" name="ciudad" placeholder="Ciudad" class="span3" value="<?php echo $ciudad; ?>" />
-							<p>Codigo postal</p>
-							<span></span>
-							<input type="text" id="" name="cp" placeholder="Codigo postal" class="span3" value="<?php echo $cp; ?>"  />
-							<p>Estado</p>
-							<span></span>
-							<input type="text" id="nombre_cli" name="estado" placeholder="Estado" class="span3" value="<?php echo $estado; ?>"  />
-							<p>Pais</p>
-							<span></span>
-							<input type="text" id="nombre_cli" name="pais" placeholder="Pais" class="span3" value="<?php echo $pais; ?>"/>
-								<fieldset id="btnAgregar" style="text-align:center;">
-								<input type="submit" id="continuar" value="Continuar" />
-								</fieldset>
-	 					</fieldset>
-					</form>
-				</div>
-			</div>
+							
+								<form action="editarcliente.php?idcli=<?php echo $idcli; ?>" method="post" id="" class="formClientes">
+									<fieldset id="ocultos">
+										<input type="hidden" name="idcli" value"<?php echo $idcli; ?>"/>
+									</fieldset>
+				 					<fieldset id="">
+				 						<div class="span4">
+				 							<p>Nombres</p>
+										<span></span>
+										<input type="text" id="" name="nombres" placeholder="Nombres" value="<?php echo $nombres; ?>"  />
+				 						</div>
+				 						<div class="span4">
+											<p>Apellidos</p>
+										<span></span>
+										<input type="text" id="" name="apellidos" placeholder="Apellidos" class="" value="<?php echo $apellidos; ?>"  />
+										</div>
+										<div class="span4">
+											<p>Nombre de Usuario</p>
+										<span></span>
+										<input type="text" id="" name="user" placeholder="Nombre de usuario" class="" value="<?php echo $user; ?>" />
+										</div>
+										
+										<div class="span4">
+											<p>Correo Electronico</p>
+										<span></span>
+										<input type="email" id="" name="email" placeholder="Correo electronico" class="" value="<?php echo $email; ?>" /></div>
+										<div class="span4">
+											<p>Telefono</p>
+										<span></span>
+										<input type="text" id="" name="tel" placeholder="Telefono" class="" value="<?php echo $tel; ?>"/></div>
+										<div class="span4">
+											<p>Dirección</p>
+										<span></span>
+										<input type="text" id="" name="direccion" placeholder="Direccion" class="" value="<?php echo $direccion; ?>"  /></div>
+										<div class="span4">
+											<p>Ciudad</p>
+										<span></span>
+										<input type="text" id="" name="ciudad" placeholder="Ciudad" class="" value="<?php echo $ciudad; ?>" /></div>
+										<div class="span4">
+											<p>Codigo postal</p>
+										<span></span>
+										<input type="text" id="" name="cp" placeholder="Codigo postal" class="" value="<?php echo $cp; ?>"  /></div>
+										<div class="span4">
+											<p>Estado</p>
+										<span></span>
+										<input type="text" id="" name="estado" placeholder="Estado" class="" value="<?php echo $estado; ?>"  /></div>
+										<div class="span4">
+											<p>Pais</p>
+										<span></span>
+										<input type="text" id="" name="pais" placeholder="Pais" class="" value="<?php echo $pais; ?>"/>
+											
+										<input type="submit" id="continuar" value="Continuar" class="btn btn-info" />
+											
+										</div>
+				 					</fieldset>
+								</form>
+						
+							</div>
 						</div><!--/span-->
 
 					</div><!--/row-->
 
 				</div>
+			</div>
+		</div>
 				<!-- end: Content -->
 		<script src="js/bootstrap.min.js"></script>
 		<script src="js/jquery.autosize.min.js"></script>

@@ -4,6 +4,9 @@ include ('includes/conexion.php');
 //$id=$_SESSION['id'];
 //echo $id;
 //variable de paso por url
+if (isset($_SESSION['nombre_cli'])) {
+	$nombre = $_SESSION["nombre_cli"];
+}
 $hab = $_GET['hab'];
 $conectar = Conectarse();
 $consulta = "SELECT nombre,descripcion,imagen FROM habitaciones WHERE id_habitacion='$hab'";
@@ -72,9 +75,14 @@ if (mysql_num_rows($resultado)) {
 									<li class="">
 										<a href="ubicacion.php">Ubicación</a>
 									</li>
-									<li class="">
-										<a href="login.php">Inicia Sesión</a>
-									</li>
+									<?php
+									if (isset($nombre)) {
+										echo '<li class=""><a class="tooltips" href="cuenta.php">Mi cuenta<span>Bienvenido ' . $nombre . '</span></a></li>';
+
+									} else {
+										echo '<li class=""><a href="login.php">Inicia Sesión</a></li>';
+									}
+									?>
 								</ul>
 							</div><!-- /.nav-collapse -->
 						</div>

@@ -81,45 +81,11 @@ if (isset($_SESSION['nombre_cli'])) {
 		<div class="container-fluid">
 			<div class="span12">
 				<div class="row">
-					<div class="span9">
-						<h1>Felicidades</br><small> ya puedes comenzar a reservar tu habitacion </small></h1>
-						<form class="form-horizontal" action='includes/valida.php' method="POST">
-							<fieldset class="well">
-								<div id="legend">
-									<legend class="">
-										Inicia Sesión
-									</legend>
-								</div>
-								<div class="control-group">
-									<!-- Username -->
-									<label class="control-label"  for="username">Nombre de usuario</label>
-									<div class="controls">
-										<input autofocus="autofocus" type="text" id="username" name="usuario" placeholder="" class="input-xlarge" >
-									</div>
-								</div>
+					<div class="span9" height="px">
+						<h1>Felicidades</br><small> ya reservaste tu habitacion </small></h1>
+						<h2><a href="index.php">Ir a inicio</a></br></h2>
+						
 
-								<div class="control-group">
-									<!-- Password-->
-									<label class="control-label" for="password">Contraseña</label>
-									<div class="controls">
-										<input type="password" id="password" name="password" placeholder="" class="input-xlarge">
-									</div>
-								</div>
-								<div class="control-group">
-									<!-- Button -->
-
-									<div class="span3">
-
-										<button class="btn btn-success" type="submit">
-											Login
-										</button>
-
-									</div>
-
-								</div>
-							</fieldset>
-							<br>
-					</form>
 					</div><!--/span9-->
 					
 
@@ -129,59 +95,7 @@ if (isset($_SESSION['nombre_cli'])) {
 
 		</div><!-- /container-fluid-->
 
-		<footer>
-			<div class="container">
-				<div class="row footer_section_pre">
-
-					<div class="span4">
-						<h4>Hotel Palmira<span class="line"></span></h4>
-
-						<p>
-							Lázaro Cárdenas Sur # 200
-						</p>
-						<p>
-							Jiquilpan, Michoacan De Ocampo, Mexico
-							<br />
-							Tel: 01 353 533 0091
-							<br />
-							Email: hotelpalmiramich@prodigy.net.mx
-						</p>
-
-						<ul data-facebook-action="recommend" data-url="#" class="socialcount socialcount-small recommend grade-a">
-							<li class="facebook">
-								<a title="Comparte en Facebook" href="https://www.facebook.com/HotelPalmira"><span class="social-icon icon-facebook"></span><span class="count"></span></a>
-							</li>
-						</ul>
-						<br />
-						<p class="copy">
-							&copy; 2013 <a href="#">DJLabs</a>
-						</p>
-
-					</div>
-					<div class="span4">
-						<h4>Ofertas Especiales<span class="line"></span></h4>
-						<p>
-							Hospedate cinco noches y disfrute de una noche más totalmente <b>gratis</b>!
-						</p>
-					</div>
-					<div class="span4">
-						<h4>Patrocinadores<span class="line"></span></h4>
-						<ul class="thumbnails">
-							<li class="span2">
-								<div class="thumbnail">
-									<img src="css/images/airlines/Pueblo-Mágico.jpg" alt="" />
-								</div>
-							</li>
-							<li class="span2">
-								<div class="thumbnail">
-									<img src="css/images/airlines/viajesnavacastro.jpg" alt="" />
-								</div>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</footer>
+		
 		<script type="text/javascript" src="js/jquery.js"></script>
 		<script type="text/javascript" src="js/jquery-ui.js"></script>
 		<script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>

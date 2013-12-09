@@ -8,12 +8,11 @@ $consulta = "SELECT reservaciones.id_reservacion,reservaciones.checkin,reservaci
 		 habitaciones.id_habitacion as IH FROM reservaciones,clientes,habitaciones,tipohabitacion
 		 WHERE reservaciones.id_cliente=clientes.id_cliente
 		 AND reservaciones.habitacion=habitaciones.id_habitacion
-		 AND habitaciones.tipo=tipohabitacion.id_tipo ";
+		 AND habitaciones.tipo=tipohabitacion.id_tipo AND reservaciones.id_reservacion='$idres' ";
 //$consulta = "SELECT * FROM reservaciones where id_reservacion=$idres";
 $resultado = mysql_query($consulta,$conectar);
 if (mysql_num_rows($resultado)) {
 	$array = mysql_fetch_array($resultado);
-
 	$checkin = $array['checkin'];
 	$checkout = $array['checkout'];
 	$estado = $array['estado'];
@@ -106,7 +105,7 @@ if (mysql_num_rows($resultado)) {
 					<div class="nav-collapse sidebar-nav">
 						<ul class="nav nav-tabs nav-stacked main-menu">
 							<li>
-								<a href="clientes.php"><span class="hidden-tablet">Regresar</span></a>
+								<a href="reservaciones.php"><span class="hidden-tablet">Regresar</span></a>
 							</li>
 
 						</ul>

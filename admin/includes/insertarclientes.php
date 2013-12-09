@@ -3,7 +3,7 @@ $DatabasePort=3306;
 $conectado = mysqli_init();
 $conectado->real_connect ( "localhost", "root", "", "sistema_reservacion", $DatabasePort );
 
-if (mysqli_connect_errno()) {
+if (mysqli_connect_error()) {
 
 echo("Error de conexión: %sn". mysqli_connect_error()); 
 exit();

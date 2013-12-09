@@ -1,4 +1,5 @@
 <?php
+include("includes/conexion.php");
 session_start();
 if (isset($_SESSION['nombre_cli'])) {
 	$nombre = $_SESSION['nombre_cli'];
@@ -6,14 +7,23 @@ if (isset($_SESSION['nombre_cli'])) {
 else{
 	
 }
+
 $habi = $_POST['hab'];
+echo "$habi";
 $cin = $_POST['checkin'];
 $cout = $_POST['checkout'];
 $ad = $_POST['adul'];
 $ni = $_POST['nin'];
-if (isset($_SESSION['id'])) {
-	$id = $_SESSION['id'];
+if (isset($_SESSION['id_cli'])) {
+	$id = $_SESSION['id_cli'];
 }
+$conectar = Conectarse();
+$consulta = "SELECT habitaciones.id_habitacion, habitaciones.tipo,
+habitaciones.descripcion,habitaciones.imagen,habitaciones.nombre as nombreh, tipohabitacion.id_tipo,
+tipohabitacion.nombre as nombret, tipohabitacion.precio FROM habitaciones, tipohabitacion 
+WHERE $habi=habitaciones.id_habitacion AND habitaciones.tipo=tipohabitacion.id_tipo";
+$resultado = mysql_query($consulta, $conectar);
+$datohabitacion = mysql_fetch_array($resultado);
  ?>
 <!DOCTYPE html>
 <html lang="es"><head>
@@ -67,7 +77,14 @@ if (isset($_SESSION['id'])) {
 									<li class=""><a href="index.php">Inicio</a></li>
 									<li class="active"><a href="habitaciones.php">Habitaciones</a></li>
 									<li class=""><a href="ubicacion.php">Ubicación</a></li>
-									<li class=""><a href="login.php">Inicia Sesión</a></li>
+									<?php
+									if (isset($nombre)) {
+										echo '<li class=""><a class="tooltips" href="cuenta.php">Mi cuenta<span>Bienvenido ' . $nombre . '</span></a></li>';
+
+									} else {
+										echo '<li class=""><a href="login.php">Inicia Sesión</a></li>';
+									}
+									?>
 								</ul>
 							</div><!-- /.nav-collapse -->
 						</div>
@@ -77,28 +94,25 @@ if (isset($_SESSION['id'])) {
 	<div class="span12">	
 		
 		<div class="row">
+			<br /><br />
 			<div class="span6">
-				<form class="form-horizontal" />
-					
-					<fieldset>
-
-					</fieldset>
-				</form>
-
+				<img src="css/images/rooms/<?php echo $datohabitacion['imagen']; ?>.jpg" alt="">
 			</div>
 			
 			<div class="span6">
 				<br /><br />
 				<h3><span>Detalles de tu </span>reservacion</h3>
 				<p>
-					Tus fechas:
 					<div class="pull-left">Check in : <i></i> <?php echo "$cin"; ?></div><br />
 					<div class="pull-left">Check out : <i><?php echo "$cout"; ?></i></div><br />
+					<div class="pull-left">Tipo de habitación : <i><?php echo $datohabitacion['nombret']; ?></i></div><br />
+					<div class="pull-left">Precio por noche : <i><?php echo $datohabitacion['precio']; ?></i></div><br />
 
 					<br />
 					<h3><span>Habitacion</span> seleccionada</h3>
 					<br />
-					<div class="pull-left"><i><?php echo "$habi"; ?></i></div><br />
+					<div class="pull-left">Habitación : <i><?php echo $datohabitacion['nombreh']; ?></i></div><br />
+					<div class="pull-left">Descripción : <i><?php echo $datohabitacion['descripcion']; ?></i></div><br />
 					<br /><br />
 				</p>
 
@@ -107,7 +121,8 @@ if (isset($_SESSION['id'])) {
 						<?php
 						if (isset($id)) {
 
-							echo '<a class="btn btn-primary btn-large check-availability" href="insertarreservacion.php?id=' . $id . '&hab=' . $habi . '">Confirmar</a>';
+							echo '<a class="btn btn-primary btn-large check-availability" href="includes/insertarreservacion.php?
+							id='.$id.'&hab='.$habi .'&fecin='.$cin.'&fecs='.$cout.'&na='.$ad.'&nn='.$ni.'">Confirmar</a>';
 
 						} else {
 							echo '<h3>Debes <span><a href="login.php">iniciar sesion</a></span> para poder confirmar tu reservación</h3>';

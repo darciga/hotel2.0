@@ -64,7 +64,7 @@ if (isset($_SESSION['nombre_cli'])) {
 									</li>
 									<?php
 									if (isset($nombre)) {
-										echo '<li class=""><a class="tooltips" href="cuenta.php">Mi cuenta<span>Bienvenido ' . $nombre . '</span></a></li>';
+										echo '<li class=""><a class="tooltips" href="#">Mi cuenta<span>Bienvenido ' . $nombre . '</span></a></li>';
 
 									} else {
 										echo '<li class=""><a href="login.php">Inicia Sesión</a></li>';

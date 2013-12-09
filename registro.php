@@ -1,3 +1,9 @@
+<?php
+session_start();
+if (isset($_SESSION['nombre_cli'])) {
+	$nombre = $_SESSION['nombre_cli'];
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 	<head>
@@ -57,9 +63,14 @@
 									<li class="">
 										<a href="ubicacion.php">Ubicación</a>
 									</li>
-									<li class="">
-										<a href="login.php">Inicia Sesión</a>
-									</li>
+									<?php
+									if (isset($nombre)) {
+										echo '<li class=""><a class="tooltips" href="#">Mi cuenta<span>Bienvenido ' . $nombre . '</span></a></li>';
+
+									} else {
+										echo '<li class=""><a href="login.php">Inicia Sesión</a></li>';
+									}
+									?>
 								</ul>
 							</div><!-- /.nav-collapse -->
 						</div>
