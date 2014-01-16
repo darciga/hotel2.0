@@ -2,7 +2,7 @@
 // Constantes conexión con la base de datos
 define("servidor", "127.0.0.1");
 define("userdb", "root");
-define("passdb", "");
+define("passdb", "Dnt123");
 define("bd", "sistema_reservacion");
 define("puerto","3306");
 // Variable que indica el status de la conexión a la base de datos
